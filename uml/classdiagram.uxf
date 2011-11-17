@@ -4,28 +4,24 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>354</x>
-      <y>258</y>
-      <w>126</w>
-      <h>72</h>
+      <x>264</x>
+      <y>264</y>
+      <w>144</w>
+      <h>60</h>
     </coordinates>
-    <panel_attributes>
-default::StringTree
-
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+tree.string::StringTree
 --
--StringNode node
---
-+boolean contains(String node)
-+Sting search(String node)
-+void add(String node)
-+String toString()</panel_attributes>
++contains(node: String): boolean
+/+search(node: String): String/
+/+add(node: String): void/</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>90</x>
-      <y>468</y>
+      <x>0</x>
+      <y>480</y>
       <w>126</w>
       <h>30</h>
     </coordinates>
@@ -39,8 +35,8 @@ default::StringTree
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>510</x>
-      <y>378</y>
+      <x>402</x>
+      <y>402</y>
       <w>192</w>
       <h>54</h>
     </coordinates>
@@ -56,12 +52,13 @@ default::StringTree
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>294</x>
-      <y>372</y>
+      <x>204</x>
+      <y>384</y>
       <w>126</w>
       <h>60</h>
     </coordinates>
-    <panel_attributes>default::SortedTree
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+default::SortedTree
 --
 +String search(String Node)
 +void add(String node)
@@ -73,8 +70,8 @@ default::StringTree
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>246</x>
-      <y>468</y>
+      <x>156</x>
+      <y>480</y>
       <w>126</w>
       <h>30</h>
     </coordinates>
@@ -88,16 +85,16 @@ default::StringTree
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>672</x>
-      <y>456</y>
-      <w>126</w>
-      <h>30</h>
+      <x>666</x>
+      <y>378</y>
+      <w>174</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>default::IntTree
 --
--IntNode node
---
-
++replace(position: int, subTree: int): void
++search(int node): int
++add(int node): void
 
 </panel_attributes>
     <additional_attributes/>
@@ -105,8 +102,8 @@ default::StringTree
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>384</x>
-      <y>468</y>
+      <x>294</x>
+      <y>480</y>
       <w>126</w>
       <h>30</h>
     </coordinates>
@@ -120,30 +117,30 @@ default::StringTree
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>450</x>
-      <y>312</y>
-      <w>96</w>
-      <h>78</h>
+      <x>360</x>
+      <y>306</y>
+      <w>78</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>18;18;84;66</additional_attributes>
+    <additional_attributes>18;18;66;96</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>342</x>
-      <y>312</y>
+      <x>252</x>
+      <y>306</y>
       <w>66</w>
-      <h>72</h>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>54;18;18;60</additional_attributes>
+    <additional_attributes>54;18;18;78</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>174</x>
-      <y>414</y>
+      <x>84</x>
+      <y>426</y>
       <w>144</w>
       <h>66</h>
     </coordinates>
@@ -153,8 +150,8 @@ default::StringTree
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>288</x>
-      <y>414</y>
+      <x>198</x>
+      <y>426</y>
       <w>84</w>
       <h>66</h>
     </coordinates>
@@ -164,8 +161,8 @@ default::StringTree
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>366</x>
-      <y>414</y>
+      <x>276</x>
+      <y>426</y>
       <w>54</w>
       <h>66</h>
     </coordinates>
@@ -175,16 +172,16 @@ default::StringTree
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>558</x>
-      <y>30</y>
+      <x>444</x>
+      <y>0</y>
       <w>90</w>
       <h>72</h>
     </coordinates>
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
 default::Node
 --
--Node left
--Node right
+-left: Node
+-right: Node
 --
 +getLeft(): Node
 +getRight(): Node
@@ -194,29 +191,29 @@ default::Node
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>630</x>
-      <y>120</y>
+      <x>564</x>
+      <y>96</y>
       <w>126</w>
-      <h>42</h>
+      <h>54</h>
     </coordinates>
-    <panel_attributes>default::IntNode
+    <panel_attributes>default::IntegerNode
 --
--Int label
+-label: int
 --
-+getLable(): Int</panel_attributes>
++getLable(): int</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>468</x>
-      <y>120</y>
+      <x>264</x>
+      <y>126</y>
       <w>126</w>
       <h>42</h>
     </coordinates>
     <panel_attributes>default::StringNode
 --
--String label
+-label: String
 --
 +getLable(): String</panel_attributes>
     <additional_attributes/>
@@ -224,54 +221,110 @@ default::Node
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>534</x>
-      <y>84</y>
-      <w>60</w>
-      <h>48</h>
+      <x>330</x>
+      <y>54</y>
+      <w>150</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>48;18;18;36</additional_attributes>
+    <additional_attributes>138;18;18;72</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>612</x>
-      <y>84</y>
-      <w>60</w>
-      <h>48</h>
+      <x>498</x>
+      <y>54</y>
+      <w>108</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>18;18;48;36</additional_attributes>
+    <additional_attributes>18;18;96;42</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>282</x>
+      <y>150</y>
+      <w>72</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>60;114;18;18</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>594</x>
+      <y>132</y>
+      <w>84</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>72;126;18;18</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>276</x>
-      <y>114</y>
-      <w>126</w>
-      <h>96</h>
+      <x>552</x>
+      <y>258</y>
+      <w>138</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
-default::Tree
-
+tree.integer::IntegerTree
 --
--Object node
---
-+boolean contains(Object node)
-+Sting search(Object node)
-+void add(Object node)
-+String toString()</panel_attributes>
++contains(node: int): boolean
+/+search(node: int): String/
+/+add(node: int): void/</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>330</x>
+      <x>630</x>
+      <y>318</y>
+      <w>60</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>18;18;48;60</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>432</x>
+      <y>156</y>
+      <w>144</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+tree::Tree
+--
+#node: Node
+--
++toString(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>522</x>
       <y>192</y>
-      <w>54</w>
+      <w>120</w>
       <h>78</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>18;18;42;66</additional_attributes>
+    <additional_attributes>18;18;108;66</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>354</x>
+      <y>192</y>
+      <w>144</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>132;18;18;72</additional_attributes>
   </element>
 </diagram>

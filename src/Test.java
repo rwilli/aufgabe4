@@ -1,9 +1,10 @@
-/**
- * 
- */
+import tree.IntegerNode;
+import tree.Node;
+import tree.StringNode;
+import tree.integer.IntTree;
 
 /**
- * @author rainer
+ * @author Gruppe222
  *
  */
 public class Test {
@@ -13,12 +14,15 @@ public class Test {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// hi
-	
-		sdf
-		sdf
-		asdf
-		// hallo
+		
+		Node n1 = new StringNode("a");
+		Node n2 = new IntegerNode(1);
+		
+		System.out.println(((StringNode) n1).getLabel());
+		System.out.println(((IntegerNode) n2).getLabel());
+		
+		IntTree t = new IntTree();
+		System.out.println(t.contains(2));
 	}
 
 }
