@@ -37,8 +37,8 @@ public class Test {
 		System.out.println(t.toString());
 		
 		// contains method from abstract class StringTree
-		System.out.println(((StringTree) t).contains("I"));		// should work
-		System.out.println(((StringTree) t).contains("X")); 	// should fail
+		System.out.println(((SortedTree) t).contains("I"));		// should work
+		System.out.println(((SortedTree) t).contains("X")); 	// should fail
 		
 		// search method from abstract class SortedTree
 		System.out.println(((SortedTree) t).search("H"));		// should work

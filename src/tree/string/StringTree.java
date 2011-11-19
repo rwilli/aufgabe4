@@ -9,10 +9,7 @@ import tree.Tree;
 public abstract class StringTree extends Tree {
 	protected String searchPath = "";
 	
-	public boolean contains(String node) {
-		// TODO implement method
-		return false;
-	}
+	public abstract boolean contains(String node);
 	
 	public abstract String search(String node);
 	

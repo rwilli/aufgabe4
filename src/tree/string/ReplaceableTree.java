@@ -33,4 +33,10 @@ public class ReplaceableTree extends StringTree {
 
 	}
 
+	@Override
+	public boolean contains(String node) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

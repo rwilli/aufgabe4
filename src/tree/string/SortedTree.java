@@ -12,6 +12,16 @@ public abstract class SortedTree extends StringTree {
 	
 	public abstract String traverse(); 
 	
+	/*
+	 * (non-Javadoc)
+	 * @see tree.string.StringTree#contains(java.lang.String)
+	 */
+	@Override
+	public boolean contains(String node) {
+		// TODO improve perhaps?!?!?
+		return search(node).equals("Knoten wurde nicht gefunden") ? false: true;
+	}
+
 	/* (non-Javadoc)
 	 * @see stringtree.StringTree#search(java.lang.String)
 	 */
