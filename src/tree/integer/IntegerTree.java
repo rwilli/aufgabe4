@@ -6,10 +6,10 @@ public abstract class IntegerTree extends Tree {
 	
 	public boolean contains(int node) {
 		// TODO implement method
-		if (this.node != null)
-			return true;
+		if (this.rootNode == null)
+			return false;
 		
-		return false;
+		return true;
 	}
 	
 	public abstract String search(int node);

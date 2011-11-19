@@ -1,6 +1,5 @@
 package tree;
 
-
 /**
  * @author Gruppe222
  *

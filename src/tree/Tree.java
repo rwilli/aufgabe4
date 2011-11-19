@@ -2,7 +2,7 @@ package tree;
 
 
 public abstract class Tree {
-	protected Node node;
+	protected Node rootNode;
 	
 	public String toString() {
 		return "Tree toString()";

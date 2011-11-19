@@ -5,15 +5,23 @@ package tree;
  *
  */
 public abstract class Node {
-	protected Node left;
-	protected Node right;
+	private Node left;
+	private Node right;
 	
 	public Node getLeft() {
 		return this.left;
 	}
 	
+	public void setLeft(Node node) {
+		this.left = node;
+	}
+	
 	public Node getRight() {
 		return this.right;
+	}
+	
+	public void setRight(Node node) {
+		this.right = node;
 	}
 
 }

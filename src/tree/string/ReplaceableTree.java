@@ -8,7 +8,7 @@ public class ReplaceableTree extends StringTree {
 	
 	public ReplaceableTree() {
 		// at beginning tree has no nodes
-		this.node = null;
+		
 	}
 	
 	public void replace(String position, String subTree) {
