@@ -1,12 +1,9 @@
-import tree.IntegerNode;
-import tree.Node;
-import tree.StringNode;
 import tree.Tree;
-import tree.integer.IntTree;
 import tree.string.InorderTree;
 import tree.string.PostorderTree;
 import tree.string.PreorderTree;
 import tree.string.SortedTree;
+import tree.string.StringTree;
 
 /**
  * @author Gruppe222
@@ -18,52 +15,95 @@ public class Test {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
-		Node n1 = new StringNode("a");
-		Node n2 = new IntegerNode(1);
-		
-		System.out.println(((StringNode) n1).getLabel());
-		System.out.println(((IntegerNode) n2).getLabel());
+		Tree t;
 		
 		/*
-		 * Testcase IntTree
-		 * 
-		 * first create IntTree instance
-		 * second add rootElement
-		 * then try methods
+		 * Testcase 1 InorderTree
 		 */
-		IntTree t = new IntTree();
-		t.add(2);
-		t.add(3);
-		t.add(5);
-		t.add(9);
-		t.add(14);
-		t.add(4);
-		t.add(34);
-		t.add(22);
-		System.out.println(t.contains(2));
+		t = new InorderTree();
 		
-		// Testcase PreorderTree
-		Tree pt = new PostorderTree();
-		((SortedTree) pt).add("D");
-		((SortedTree) pt).add("G");
-		((SortedTree) pt).add("B");
-		((SortedTree) pt).add("A");
-		((SortedTree) pt).add("C");
-		((SortedTree) pt).add("F");
-		((SortedTree) pt).add("I");
-		((SortedTree) pt).add("H");
-		((SortedTree) pt).add("J");
+		((SortedTree) t).add("D");
+		((SortedTree) t).add("G");
+		((SortedTree) t).add("B");
+		((SortedTree) t).add("A");
+		((SortedTree) t).add("C");
+		((SortedTree) t).add("F");
+		((SortedTree) t).add("I");
+		((SortedTree) t).add("H");
+		((SortedTree) t).add("J");
 		
-		// search method finds node
-		System.out.println(((SortedTree) pt).search("H"));
+		// show tree method from abstract class Tree
+		System.out.println(t.toString());
 		
-		// search method fails no node with given label in the tree
-		System.out.println(((SortedTree) pt).search("X"));
+		// contains method from abstract class StringTree
+		System.out.println(((StringTree) t).contains("I"));		// should work
+		System.out.println(((StringTree) t).contains("X")); 	// should fail
 		
-		//System.out.println(((InorderTree) pt).traverse());
-		System.out.println(((PostorderTree) pt).traverse());
+		// search method from abstract class SortedTree
+		System.out.println(((SortedTree) t).search("H"));		// should work
+		System.out.println(((SortedTree) t).search("Z"));		// should fail
+		
+		// traverse method from InorderTree class
+		System.out.println(((InorderTree) t).traverse());
+		
+		/*
+		 * Testcase 2 PostorderTree
+		 */
+		t = new PostorderTree();
+		
+		((SortedTree) t).add("D");
+		((SortedTree) t).add("G");
+		((SortedTree) t).add("B");
+		((SortedTree) t).add("A");
+		((SortedTree) t).add("C");
+		((SortedTree) t).add("F");
+		((SortedTree) t).add("I");
+		((SortedTree) t).add("H");
+		((SortedTree) t).add("J");
+		
+		// show tree method from abstract class Tree
+		System.out.println(t.toString());
+		
+		// contains method from abstract class StringTree
+		System.out.println(((StringTree) t).contains("I"));		// should work
+		System.out.println(((StringTree) t).contains("X")); 	// should fail
+		
+		// search method from abstract class SortedTree
+		System.out.println(((SortedTree) t).search("H"));		// should work
+		System.out.println(((SortedTree) t).search("Z"));		// should fail
+		
+		// traverse method from PostorderTree class
+		System.out.println(((PostorderTree) t).traverse());
+		
+		/*
+		 * Testcase 3 PreorderTree
+		 */
+		t = new PreorderTree();
+		
+		((SortedTree) t).add("D");
+		((SortedTree) t).add("G");
+		((SortedTree) t).add("B");
+		((SortedTree) t).add("A");
+		((SortedTree) t).add("C");
+		((SortedTree) t).add("F");
+		((SortedTree) t).add("I");
+		((SortedTree) t).add("H");
+		((SortedTree) t).add("J");
+		
+		// show tree method from abstract class Tree
+		System.out.println(t.toString());
+		
+		// contains method from abstract class StringTree
+		System.out.println(((StringTree) t).contains("I"));		// should work
+		System.out.println(((StringTree) t).contains("X")); 	// should fail
+		
+		// search method from abstract class SortedTree
+		System.out.println(((SortedTree) t).search("H"));		// should work
+		System.out.println(((SortedTree) t).search("Z"));		// should fail
+		
+		// traverse method from PostorderTree class
+		System.out.println(((PreorderTree) t).traverse());
 	}
 
 }
