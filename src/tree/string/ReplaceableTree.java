@@ -1,7 +1,9 @@
 package tree.string;
 
+import tree.StringNode;
+
 /**
- * @author rainer
+ * @author Gruppe222
  *
  */
 public class ReplaceableTree extends StringTree {
@@ -29,8 +31,22 @@ public class ReplaceableTree extends StringTree {
 	 */
 	@Override
 	public void add(String node) {
-		// TODO Auto-generated method stub
+		if (this.rootNode == null && node != null)
+	        this.rootNode = new StringNode(node);
+	    else if (node != null)
+	        this.rootNode = insert((StringNode) this.rootNode, node);
+	}
 
+	/**
+	 * 
+	 * @param node
+	 * @param label
+	 * @return
+	 */
+	private StringNode insert(StringNode node, String label) {
+		// TODO implement method
+		
+		return node;
 	}
 
 	@Override
