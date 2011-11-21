@@ -2,7 +2,6 @@ import tree.Tree;
 import tree.string.InorderTree;
 import tree.string.PostorderTree;
 import tree.string.PreorderTree;
-import tree.string.ReplaceableTree;
 import tree.string.SortedTree;
 import tree.string.StringTree;
 
@@ -105,20 +104,6 @@ public class Test {
 		
 		// traverse method from PostorderTree class
 		System.out.println(((PreorderTree) t).traverse());
-		
-		/*
-		 * Testcase 4 ReplaceableTree
-		 */
-		t = new ReplaceableTree();
-		
-		((ReplaceableTree) t).add("G");
-		((ReplaceableTree) t).add("B");
-		((ReplaceableTree) t).add("T");
-		((ReplaceableTree) t).add("X");
-		((ReplaceableTree) t).add("C");
-		
-		// show tree method from abstract class Tree
-		System.out.println(t.toString());
 	}
 
 }
