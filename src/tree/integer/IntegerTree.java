@@ -3,14 +3,9 @@ package tree.integer;
 import tree.Tree;
 
 public abstract class IntegerTree extends Tree {
+	protected String searchPath = "";
 	
-	public boolean contains(int node) {
-		// TODO implement method
-		if (this.rootNode == null)
-			return false;
-		
-		return true;
-	}
+	public abstract boolean contains(int node);
 	
 	public abstract String search(int node);
 	
