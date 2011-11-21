@@ -3,10 +3,14 @@ package tree.string;
 import tree.StringNode;
 
 /**
+ * PreorderTree class extends SortedTree and
+ * implements preorder traverse method
+ * 
  * @author Gruppe222
  *
  */
 public class PreorderTree extends SortedTree {
+	// result order
 	private String order = "";
 	
 	/* (non-Javadoc)
@@ -20,6 +24,13 @@ public class PreorderTree extends SortedTree {
 		return this.order;
 	}
 	
+	/**
+	 * Preorder method
+	 * First root node then walk trough the left sub-tree
+	 * and then trough the right sub-tree
+	 * 
+	 * @param node root node
+	 */
 	private void preOrderTraverse(StringNode node) {
 		if (node == null) 
 			return;

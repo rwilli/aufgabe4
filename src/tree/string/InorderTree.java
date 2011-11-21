@@ -3,6 +3,9 @@ package tree.string;
 import tree.StringNode;
 
 /**
+ * InorderTree class extends SortedTree and
+ * implements inorder traverse method
+ * 
  * @author Gruppe222
  *
  */
@@ -20,6 +23,14 @@ public class InorderTree extends SortedTree {
 		return this.order;
 	}
 	
+	/**
+	 * Inorder method
+	 * First walk trough the left sub-tree
+	 * then the root node and finally
+	 * trough the right sub-tree
+	 * 
+	 * @param node root node
+	 */
 	private void inOrderTraverse(StringNode node) {
 		if (node == null) 
 			return;

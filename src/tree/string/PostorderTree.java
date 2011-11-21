@@ -2,6 +2,13 @@ package tree.string;
 
 import tree.StringNode;
 
+/**
+ * PostorderTree class extends SortedTree and
+ * implements postorder traverse method
+ * 
+ * @author Gruppe222
+ *
+ */
 public class PostorderTree extends SortedTree {
 	private String order = "";
 	
@@ -17,8 +24,12 @@ public class PostorderTree extends SortedTree {
 	}
 	
 	/**
+	 * Postorder method
+	 * First walk trough the left sub-tree
+	 * then trough the right sub-tree and 
+	 * finally the root node
 	 * 
-	 * @param node
+	 * @param node root node
 	 */
 	private void postOrderTraverse(StringNode node) {
 		if (node == null) 

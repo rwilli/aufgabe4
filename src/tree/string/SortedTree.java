@@ -3,13 +3,26 @@ package tree.string;
 import tree.StringNode;
 
 /**
+ * SortedTree class extends StringTree.
+ * Left tree part is smaller than right part
+ * and right tree part is equal taller than
+ * left part
+ * 
  * @author Gruppe222
  *
  */
 public abstract class SortedTree extends StringTree {
+	// current node
 	private StringNode currentNode;
+	
+	// current search path
 	private String currentPath;
 	
+	/**
+	 * Traverse method
+	 * 
+	 * @return result of traverse method whitespace-seperated
+	 */
 	public abstract String traverse(); 
 	
 	/*
@@ -55,10 +68,11 @@ public abstract class SortedTree extends StringTree {
 	}
 
 	/**
+	 * Recursive add method for tree
 	 * 
-	 * @param node
-	 * @param label
-	 * @return
+	 * @param node root node
+	 * @param label to add
+	 * @return new node order
 	 */
 	private StringNode insert(StringNode node, String label) {
 		if (node == null)
