@@ -1,8 +1,5 @@
-package tree.integer;
 
-import stack.Stack;
-import node.INode;
-import node.Node;
+
 
 public class IntTree extends IntegerTree {
 	private String currentPath = "";
@@ -22,8 +19,8 @@ public class IntTree extends IntegerTree {
 		this.root.setLabel(l);
 	}
 	
-	public void replace(int position, String subTree) {
-		// TODO implement method
+	public void replace(String position, String subTree) {
+		Replaceable.replace(this.root, position, subTree);
 	}
 	
 	/*
@@ -113,10 +110,6 @@ public class IntTree extends IntegerTree {
 	public boolean contains(int node) {
 		return search(node).equals("Knoten wurde nicht gefunden") ? false: true;
 
-	}
-	
-	public void replace(String position, String subTree) {
-		
 	}
 	
 }

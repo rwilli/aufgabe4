@@ -1,10 +1,3 @@
-import tree.integer.IntTree;
-import tree.integer.IntegerTree;
-import tree.string.InorderTree;
-import tree.string.PostorderTree;
-import tree.string.PreorderTree;
-import tree.string.ReplaceableTree;
-import tree.string.StringTree;
 
 
 public class Test {

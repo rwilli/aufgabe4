@@ -1,6 +1,5 @@
-package tree.integer;
 
-import node.INode;
+
 
 public abstract class IntegerTree {
 	protected INode root;

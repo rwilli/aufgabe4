@@ -1,6 +1,5 @@
-package tree.string;
 
-import node.INode;
+
 
 public abstract class StringTree {
 	protected INode root;

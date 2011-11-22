@@ -1,6 +1,5 @@
-package tree.string;
 
-import node.INode;
+
 
 public class PreorderTree extends SortedTree {
 	

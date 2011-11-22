@@ -1,8 +1,5 @@
-package tree.string;
 
-import stack.Stack;
-import node.INode;
-import node.Node;
+
 
 public class ReplaceableTree extends StringTree {
 	private String currentPath = "";
@@ -101,6 +98,6 @@ public class ReplaceableTree extends StringTree {
 	}
 
 	public void replace(String position, String subTree) {
-		// TODO implement method
+		Replaceable.replace(this.root, position, subTree);
 	}
 }

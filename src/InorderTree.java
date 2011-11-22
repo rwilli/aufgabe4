@@ -1,6 +1,5 @@
-package tree.string;
 
-import node.INode;
+
 
 /**
  * InorderTree class extends SortedTree and

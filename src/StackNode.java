@@ -1,6 +1,5 @@
-package stack;
 
-import node.INode;
+
 
 /**
  * 

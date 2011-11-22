@@ -1,4 +1,4 @@
-package node;
+
 
 /**
  * Interface INode implements all necessary

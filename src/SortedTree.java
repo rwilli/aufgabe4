@@ -1,7 +1,5 @@
-package tree.string;
 
-import node.INode;
-import node.Node;
+
 
 public abstract class SortedTree extends StringTree {
 	// current node
