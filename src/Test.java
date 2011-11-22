@@ -177,18 +177,18 @@ public class Test {
 //		System.out.println(((IntegerTree) t).search(67));		// should fail
 		
 		// create temp tree for replace method
-		t1 = new IntTree();
+		IntTree t2 = new IntTree();
 		System.out.println("IntTree");
-		((IntTree) t1).add(23);
-		((IntTree) t1).add(7);
-		((IntTree) t1).add(14);
-		((IntTree) t1).add(9);
-		((IntTree) t1).add(12);
-		((IntTree) t1).add(15);
+		t2.add(4);
+		t2.add(6);
+		t2.add(8);
+		t2.add(11);
+		t2.add(2);
+		t2.add(3);
 		
 		
-		//Test contain of IntTree
-		System.out.println(((IntTree) t1).search(15));
+		//Test search of IntTree
+		System.out.println(((IntTree) t2).search(3));
 		
 		// replace method from Replaceable class
 	//	((IntTree) t).replace(2, t1.toString());
