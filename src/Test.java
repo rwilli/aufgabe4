@@ -185,11 +185,14 @@ public class Test {
 		((IntTree) t1).add(9);
 		((IntTree) t1).add(12);
 		
+		//Test contain of IntTree
+		System.out.println(((IntTree) t1).contains(7));
+		
 		// replace method from Replaceable class
 	//	((IntTree) t).replace(2, t1.toString());
 		
 		// show tree method from abstract class Tree
-		System.out.println(t.toString());
+		System.out.println(t1.toString());
 	}
 
 }

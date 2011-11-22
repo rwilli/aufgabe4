@@ -18,11 +18,13 @@ public abstract class IntegerTree extends Tree {
 	public abstract String search(int node);
 	
 	public abstract void add(int node);
+	
 
 	public String toString() {
-		if (this.rootNode != null)
+
+		if (this.rootNode != null){
 			walk((IntegerNode) this.rootNode);
-	         
+		}
 		return this.output;
 	}
 
@@ -31,7 +33,7 @@ public abstract class IntegerTree extends Tree {
 			return;
 		
 		this.output += ((IntegerNode) node).getLabel() + "\n- ";
-		walk((Node) node.getLeft());	// walk trough left sub-tree
-		walk((Node) node.getRight());	// walk trough right sub-tree
+		walk( node.getLeft());	// walk trough left sub-tree
+		walk( node.getRight());	// walk trough right sub-tree
 	}
 }

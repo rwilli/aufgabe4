@@ -1,6 +1,8 @@
 package tree.integer;
 
 import tree.IntegerNode;
+import tree.Node;
+import tree.StackNode;
 
 
 public class IntTree extends IntegerTree {
@@ -26,36 +28,62 @@ public class IntTree extends IntegerTree {
 	@Override
 	public String search(int node) {
 		
-		currentNode = (IntegerNode) this.rootNode;
-		currentPath = this.searchPath;
+		StackNode stackNode;
 		
-		boolean found = false;
-	
-		return null;
+		if (this.rootNode != null) 
+			stackNode = new StackNode(this.rootNode);
+		else 
+			return "Nicht gefunden";
 		
+		  while (stackNode != null) {                  // solange Keller noch Baeume enthaelt
+
+		        Node n = stackNode;                // besorge Baum aus Keller
+		        StackNode p = stackNode.getPreviousNode();
+		        stackNode = null;                         // und entferne obersten Eintrag
+		        
+		        do {
+		            System.out.println(((IntegerNode) n).getLabel());          // gib Wert der Baumwurzel aus
+		         
+		            if (n.getRight() != null){       // falls es rechten Sohn gibt,
+		                stackNode = new StackNode(n.getRight());        // lege rechten Sohn auf den Keller
+		                stackNode.setPreviousNode(p);
+		            }
+		            n = n.getLeft();                 // gehe zum linken Sohn
+		        } while (n != null);             // solange es linken Sohn gibt
+		    }
+		  
+		  return "";
 		
-		
+	/*	
+		public class TiefenSuche {
+
+			  public static void tiefenSuche (Baum wurzel) { // starte bei wurzel 
+
+			    Baum b;                               // Hilfsbaum
+
+			    Keller k = new Keller();              // konstruiere einen Keller
+
+			    if (!wurzel.empty()) k.push(wurzel);  // lege uebergebenen Baum in Keller
+
+			    while (!k.empty()) {                  // solange Keller noch Baeume enthaelt
+
+			        b = (Baum)k.top();                // besorge Baum aus Keller
+			        k.pop();                          // und entferne obersten Eintrag
+			        
+			        do {
+			            IO.print(b.value());          // gib Wert der Baumwurzel aus
+			            if (!b.right().empty())       // falls es rechten Sohn gibt,
+			                k.push(b.right());        // lege rechten Sohn auf den Keller
+			            b = b.left();                 // gehe zum linken Sohn
+			        } while (!b.empty());             // solange es linken Sohn gibt
+			    }
+			  }
+			}
+			*/
 	}
 	
-/*	private boolean searchHelp( IntegerNode currentNode, int node){
 	
-		if(currentNode != null && node == currentNode.getLabel() ){
-			return true;
-		}
-		else{
-			if(currentNode.getLeft() != null){
-				searchHelp((IntegerNode) currentNode.getLeft(), node);
-			}
-			if(currentNode.getLeft() != null){
-				searchHelp((IntegerNode) currentNode.getLeft(), node);
-			}
-			
-		}
-			
-			return false;
-		
-	}
-*/
+
 	@Override
 	public void add(int node) {
 		if (this.rootNode == null) {
@@ -136,7 +164,6 @@ public class IntTree extends IntegerTree {
 	
 	@Override
 	public boolean contains(int node) {
-		// TODO Auto-generated method stub
 		return search(node).equals("Knoten wurde nicht gefunden") ? false: true;
 
 	}
