@@ -1,6 +1,6 @@
 package tree.string;
 
-import tree.StringNode;
+import node.INode;
 
 /**
  * InorderTree class extends SortedTree and
@@ -10,15 +10,27 @@ import tree.StringNode;
  *
  */
 public class InorderTree extends SortedTree {
-	private String order = "";
+
+	public InorderTree() {
+		
+	}
+	
+	public InorderTree(INode n) {
+		this.root = n;
+	}
+	
+	public InorderTree(INode n, String l) {
+		this.root = n;
+		this.root.setLabel(l);
+	}
 	
 	/* (non-Javadoc)
 	 * @see stringtree.SortedTree#traverse()
 	 */
 	@Override
 	public String traverse() {
-		if (this.rootNode != null)
-			inOrderTraverse((StringNode) this.rootNode);
+		if (this.root != null)
+			inorderTraverse(this.root);
 	         
 		return this.order;
 	}
@@ -31,12 +43,12 @@ public class InorderTree extends SortedTree {
 	 * 
 	 * @param node root node
 	 */
-	private void inOrderTraverse(StringNode node) {
+	private void inorderTraverse(INode node) {
 		if (node == null) 
 			return;
 		
-		inOrderTraverse((StringNode) node.getLeft());	// walk trough left sub-tree
+		inorderTraverse(node.getLeftNode());	// walk trough left sub-tree
 		this.order += node.getLabel() + " ";
-	    inOrderTraverse((StringNode) node.getRight());	// walk trough right sub-tree
+		inorderTraverse(node.getRightNode());	// walk trough right sub-tree
 	}
 }

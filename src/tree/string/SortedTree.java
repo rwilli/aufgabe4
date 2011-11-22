@@ -1,95 +1,66 @@
 package tree.string;
 
-import tree.StringNode;
+import node.INode;
+import node.Node;
 
-/**
- * SortedTree class extends StringTree.
- * Left tree part is smaller than right part
- * and right tree part is equal taller than
- * left part
- * 
- * @author Gruppe222
- *
- */
 public abstract class SortedTree extends StringTree {
 	// current node
-	private StringNode currentNode;
-	
+	private INode currentNode;
+
 	// current search path
 	private String currentPath;
 	
+	protected String order = "";
+
 	/**
 	 * Traverse method
 	 * 
 	 * @return result of traverse method whitespace-seperated
 	 */
-	public abstract String traverse(); 
-	
-	/*
-	 * (non-Javadoc)
-	 * @see tree.string.StringTree#contains(java.lang.String)
-	 */
+	public abstract String traverse();
+
 	@Override
 	public boolean contains(String node) {
-		// TODO improve perhaps?!?!?
 		return search(node).equals("Knoten wurde nicht gefunden") ? false: true;
 	}
 
-	/* (non-Javadoc)
-	 * @see stringtree.StringTree#search(java.lang.String)
-	 */
 	@Override
 	public String search(String node) {
-		currentNode = (StringNode) this.rootNode;
+		currentNode = this.root;
 		currentPath = this.searchPath;
 		
 		while (currentNode != null && !currentNode.getLabel().equals(node)) {  
-			if (node.compareTo(currentNode.getLabel()) < 0) {
-				currentNode = (StringNode) currentNode.getLeft();
-				currentPath += "left";
+			if (node.compareTo((String) currentNode.getLabel()) < 0) {
+				currentNode = currentNode.getLeftNode();
+				currentPath += "left ";
 			} else {
-				currentNode = (StringNode) currentNode.getRight();
-				currentPath += "right";
+				currentNode = currentNode.getRightNode();
+				currentPath += "right ";
 			}
 		}
 		
 		return currentNode == null ? "Knoten wurde nicht gefunden" : currentPath;
 	}
 
-	/* (non-Javadoc)
-	 * @see stringtree.StringTree#add(java.lang.String)
-	 */
 	@Override
 	public void add(String node) {
-		if (this.rootNode == null && node != null)
-	        this.rootNode = new StringNode(node);
+		if (this.root == null && node != null)
+	        this.root = new Node(node);
 	    else if (node != null)
-	        this.rootNode = insert((StringNode) this.rootNode, node);
+	        this.root = insert(this.root, node);
 	}
 
-	/**
-	 * Recursive add method for tree
-	 * 
-	 * @param node root node
-	 * @param label to add
-	 * @return new node order
-	 */
-	private StringNode insert(StringNode node, String label) {
-		if (node == null)
-			node = new StringNode(label);
+	private INode insert(INode root, String label) {
+		if (root == null)
+			root = new Node(label);
 		// left side
-		else if (label.compareTo(node.getLabel()) < 0 )
-			node.setLeft(insert((StringNode) node.getLeft(), label));
+		else if (label.compareTo((String) root.getLabel()) < 0 )
+			root.setLeftNode(insert(root.getLeftNode(), label));
 		// right side
-	    else if (label.compareTo(node.getLabel()) >= 0 )
-	    	node.setRight(insert((StringNode) node.getRight(), label));
+	    else if (label.compareTo((String) root.getLabel()) >= 0 )
+	    	root.setRightNode(insert(root.getRightNode(), label));
 		
-		return node;
-	}
-
-	
-	
-
-	
+		return root;
+	} 
 
 }

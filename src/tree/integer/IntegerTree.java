@@ -1,32 +1,46 @@
 package tree.integer;
 
-import tree.IntegerNode;
-import tree.Node;
-import tree.Tree;
+import node.INode;
 
-public abstract class IntegerTree extends Tree {
+public abstract class IntegerTree {
+	protected INode root;
+	
+	// tree search path
 	protected String searchPath = "";
+	
+	// tree output
 	private String output = "";
 	
+	/**
+	 * Check if tree contains given string.
+	 * Returns true if tree contains node
+	 * labeled with string node, otherwise 
+	 * returns false
+	 * 
+	 * @param node string to search
+	 * @return return true if tree contains node, otherwise false
+	 */
 	public abstract boolean contains(int node);
 	
+	/**
+	 * Search tree for label with string node.
+	 * Returns search path. If node not found,
+	 * return "Knoten wurde nicht gefunden".
+	 * 
+	 * @param node string to search
+	 * @return path to string node
+	 */
 	public abstract String search(int node);
 	
+	/**
+	 * Adds new node with given string label
+	 * 
+	 * @param node string to add
+	 */
 	public abstract void add(int node);
-
+	
 	public String toString() {
-		if (this.rootNode != null)
-			walk((IntegerNode) this.rootNode);
-	         
-		return this.output;
+		return "INTEGERTREE toString";
 	}
 
-	private void walk(Node node) {
-		if (node == null) 
-			return;
-		
-		this.output += ((IntegerNode) node).getLabel() + "\n- ";
-		walk((Node) node.getLeft());	// walk trough left sub-tree
-		walk((Node) node.getRight());	// walk trough right sub-tree
-	}
 }

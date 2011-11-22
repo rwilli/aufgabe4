@@ -1,42 +1,41 @@
 package tree.string;
 
-/**
- * @author rainer
- *
- */
+import node.INode;
+
 public class ReplaceableTree extends StringTree {
-	
+
 	public ReplaceableTree() {
-		// at beginning tree has no nodes
 		
 	}
 	
-	public void replace(String position, String subTree) {
-		// TODO implement method
+	public ReplaceableTree(INode n) {
+		this.root = n;
 	}
-
-	/* (non-Javadoc)
-	 * @see stringtree.StringTree#search(java.lang.String)
-	 */
-	@Override
-	public String search(String node) {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public ReplaceableTree(INode n, String l) {
+		this.root = n;
+		this.root.setLabel(l);
 	}
-
-	/* (non-Javadoc)
-	 * @see stringtree.StringTree#add(java.lang.String)
-	 */
-	@Override
-	public void add(String node) {
-		// TODO Auto-generated method stub
-
-	}
-
+	
 	@Override
 	public boolean contains(String node) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
+	@Override
+	public String search(String node) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void add(String node) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void replace(String position, String subTree) {
+		// TODO implement method
+	}
 }

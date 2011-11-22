@@ -1,6 +1,6 @@
 package tree.string;
 
-import tree.StringNode;
+import node.INode;
 
 /**
  * PostorderTree class extends SortedTree and
@@ -10,15 +10,27 @@ import tree.StringNode;
  *
  */
 public class PostorderTree extends SortedTree {
-	private String order = "";
+
+	public PostorderTree() {
+		
+	}
+	
+	public PostorderTree(INode n) {
+		this.root = n;
+	}
+	
+	public PostorderTree(INode n, String l) {
+		this.root = n;
+		this.root.setLabel(l);
+	}
 	
 	/* (non-Javadoc)
 	 * @see stringtree.SortedTree#traverse()
 	 */
 	@Override
 	public String traverse() {
-		if (this.rootNode != null)
-			postOrderTraverse((StringNode) this.rootNode);
+		if (this.root != null)
+			postorderTraverse(this.root);
 		
 		return this.order;
 	}
@@ -31,12 +43,12 @@ public class PostorderTree extends SortedTree {
 	 * 
 	 * @param node root node
 	 */
-	private void postOrderTraverse(StringNode node) {
+	private void postorderTraverse(INode node) {
 		if (node == null) 
 			return;
 		
-		postOrderTraverse((StringNode) node.getLeft());		// walk trough left sub-tree
-		postOrderTraverse((StringNode) node.getRight());	// walk trough right sub-tree
+		postorderTraverse(node.getLeftNode());		// walk trough left sub-tree
+		postorderTraverse(node.getRightNode());	// walk trough right sub-tree
 		this.order += node.getLabel() + " ";
 	}
 

@@ -1,23 +1,17 @@
 package tree.string;
 
-import tree.Node;
-import tree.StringNode;
-import tree.Tree;
+import node.INode;
 
-/**
- * StringTree class extends Tree and
- * stands for a tree with string nodes
- * 
- * @author Gruppe222
- *
- */
-public abstract class StringTree extends Tree {
+public abstract class StringTree {
+	protected INode root;
+	
 	// tree search path
 	protected String searchPath = "";
-	
+		
 	// tree output
 	private String output = "";
-	
+	String turn = "-";
+		
 	/**
 	 * Check if tree contains given string.
 	 * Returns true if tree contains node
@@ -28,7 +22,7 @@ public abstract class StringTree extends Tree {
 	 * @return return true if tree contains node, otherwise false
 	 */
 	public abstract boolean contains(String node);
-	
+		
 	/**
 	 * Search tree for label with string node.
 	 * Returns search path. If node not found,
@@ -47,18 +41,43 @@ public abstract class StringTree extends Tree {
 	public abstract void add(String node);
 	
 	public String toString() {
-		if (this.rootNode != null)
-			walk((StringNode) this.rootNode);
-	         
-		return this.output;
-	}
+        return "StringTree toString()";
+    }
 
-	private void walk(Node node) {
+	private String toStringHelper(INode node) {
 		if (node == null) 
-			return;
+			return "";
 		
-		this.output += ((StringNode) node).getLabel() + "\n- ";
-		walk((Node) node.getLeft());	// walk trough left sub-tree
-		walk((Node) node.getRight());	// walk trough right sub-tree
+		String p = toStringHelper(node.getLeftNode());
+		p += toStringHelper(node.getRightNode());
+		p = p + node.getLabel() + "-";
+		System.out.print(p);
+		System.out.print("\n");
+		
+		return p;
+		//toStringHelper(node.getLeftNode());	// walk trough left sub-tree
+		//toStringHelper(node.getRightNode());	// walk trough right sub-tree
 	}
+	
+	public String printTriangle (int count) {
+	    if( count <= 0 ) return "";
+
+	    String p = printTriangle(count - 1);
+	    p = p + "*";
+	    System.out.print(p);
+	    System.out.print("\n");
+	    //System.out.print(p);
+
+	    return p;
+	 }
+	
+	public void printTriangle2 (int count) {
+		for (int x = 1; x <= count; x++) { 
+	        System.out.print("*"); 
+	    }
+	    System.out.print("\n");
+	    if (count == 0) return;
+	    printTriangle2(count - 1);
+	 }
+
 }
