@@ -98,6 +98,8 @@ public class ReplaceableTree extends StringTree {
 	}
 
 	public void replace(String position, String subTree) {
-		Replaceable.replace(this.root, position, subTree);
+		Replaceable rp = new Replaceable();
+		
+		rp.replace(this.root, position, subTree);
 	}
 }

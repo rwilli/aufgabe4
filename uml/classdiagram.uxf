@@ -357,7 +357,7 @@ node::INode
     </coordinates>
     <panel_attributes>default::Replaceable
 --
-+void static replace(position: Sring, subTree: String)
++void replace(position: Sring, subTree: String)
 </panel_attributes>
     <additional_attributes/>
   </element>
