@@ -1,8 +1,8 @@
 package tree.integer;
 
+import stack.Stack;
 import tree.IntegerNode;
 import tree.Node;
-import tree.StackNode;
 
 
 public class IntTree extends IntegerTree {
@@ -11,7 +11,7 @@ public class IntTree extends IntegerTree {
 	private IntegerNode currentNode;
 		
 	// current search path
-	private String currentPath;
+	private String currentPath = "";
 		
 	public IntTree() {
 		
@@ -28,31 +28,51 @@ public class IntTree extends IntegerTree {
 	@Override
 	public String search(int node) {
 		
-		StackNode stackNode;
+		Stack s = new Stack();
 		
 		if (this.rootNode != null) 
-			stackNode = new StackNode(this.rootNode);
+			s.push(this.rootNode);	
 		else 
-			return "Nicht gefunden";
-		
-		  while (stackNode != null) {                  // solange Keller noch Baeume enthaelt
+			return "Knoten wurde nicht gefunden";
+    	         // gib Wert der Baumwurzel aus
 
-		        Node n = stackNode;                // besorge Baum aus Keller
-		        StackNode p = stackNode.getPreviousNode();
-		        stackNode = null;                         // und entferne obersten Eintrag
+		  while ( !s.isEmpty() ) {                  // solange Keller noch Baeume enthaelt
+
+		        Node n = s.pop();          // besorge Baum aus Keller
+	        	          // gib Wert der Baumwurzel aus
+                              // und entferne obersten Eintrag
 		        
 		        do {
-		            System.out.println(((IntegerNode) n).getLabel());          // gib Wert der Baumwurzel aus
+		            
+		        	if(((IntegerNode) n).getLabel() == node){
+		        		
+		        		Node p = n.getParent();
+		        		while(p != null){
+		        			
+		        			
+		        			
+		        			if(p.getLeft() == n)
+		        				this.currentPath =  "left"+this.currentPath;
+		        			else
+		        				this.currentPath =  "right"+this.currentPath;
+		        			
+		        			 p = p.getParent();
+
+		        		}
+		        		
+		        		
+		        		return this.currentPath;
+		        	}
+		        												// gib Wert der Baumwurzel aus
 		         
 		            if (n.getRight() != null){       // falls es rechten Sohn gibt,
-		                stackNode = new StackNode(n.getRight());        // lege rechten Sohn auf den Keller
-		                stackNode.setPreviousNode(p);
+		            	s.push(n.getRight());        // lege rechten Sohn auf den Keller
 		            }
 		            n = n.getLeft();                 // gehe zum linken Sohn
 		        } while (n != null);             // solange es linken Sohn gibt
 		    }
 		  
-		  return "";
+		  return "Knoten wurde nicht gefunden";
 		
 	/*	
 		public class TiefenSuche {

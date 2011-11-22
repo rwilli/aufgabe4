@@ -19,6 +19,8 @@ public abstract class IntegerTree extends Tree {
 	
 	public abstract void add(int node);
 	
+	
+	
 
 	public String toString() {
 
