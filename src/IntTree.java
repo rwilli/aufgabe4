@@ -5,8 +5,11 @@ public class IntTree extends IntegerTree {
 	private String currentPath = "";
 	// current node
 		private INode currentNode;
+		Replaceable rp = new Replaceable();
+
 
 	public IntTree() {
+
 		
 	}
 	
@@ -20,7 +23,6 @@ public class IntTree extends IntegerTree {
 	}
 	
 	public void replace(String position, String subTree) {
-		Replaceable rp = new Replaceable();
 		
 		rp.replace(this.root, position, subTree);
 	}
