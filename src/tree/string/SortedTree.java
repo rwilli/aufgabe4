@@ -87,4 +87,17 @@ public abstract class SortedTree extends StringTree {
 		return node;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see tree.Tree#toString()
+	 */
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
+
+	
+
 }
