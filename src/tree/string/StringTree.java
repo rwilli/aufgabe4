@@ -1,5 +1,7 @@
 package tree.string;
 
+import tree.Node;
+import tree.StringNode;
 import tree.Tree;
 
 /**
@@ -12,6 +14,9 @@ import tree.Tree;
 public abstract class StringTree extends Tree {
 	// tree search path
 	protected String searchPath = "";
+	
+	// tree output
+	private String output = "";
 	
 	/**
 	 * Check if tree contains given string.
@@ -40,5 +45,20 @@ public abstract class StringTree extends Tree {
 	 * @param node string to add
 	 */
 	public abstract void add(String node);
+	
+	public String toString() {
+		if (this.rootNode != null)
+			walk((StringNode) this.rootNode);
+	         
+		return this.output;
+	}
 
+	private void walk(Node node) {
+		if (node == null) 
+			return;
+		
+		this.output += ((StringNode) node).getLabel() + "\n- ";
+		walk((Node) node.getLeft());	// walk trough left sub-tree
+		walk((Node) node.getRight());	// walk trough right sub-tree
+	}
 }

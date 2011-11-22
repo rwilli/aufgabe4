@@ -39,7 +39,7 @@ public class Test {
 		((SortedTree) t).add("J");
 		
 		// show tree method from abstract class Tree
-		System.out.println(t.toString());
+		System.out.println(((StringTree) t).toString());
 		
 		// contains method from abstract class StringTree
 		System.out.println(((SortedTree) t).contains("I"));		// should work
@@ -133,8 +133,8 @@ public class Test {
 		System.out.println(((StringTree) t).contains("X")); 	// should fail
 		
 		// search method from Replaceable class
-		System.out.println(((SortedTree) t).search("H"));		// should work
-		System.out.println(((SortedTree) t).search("Z"));		// should fail
+		System.out.println(((ReplaceableTree) t).search("H"));		// should work
+		System.out.println(((ReplaceableTree) t).search("Z"));		// should fail
 		
 		// create temp tree for replace method
 		Tree t1 = new ReplaceableTree();
@@ -162,6 +162,8 @@ public class Test {
 		((IntegerTree) t).add(11);
 		((IntegerTree) t).add(2);
 		((IntegerTree) t).add(3);
+		((IntegerTree) t).add(34);
+		((IntegerTree) t).add(12);
 		
 		// show tree method from abstract class Tree
 		System.out.println(t.toString());

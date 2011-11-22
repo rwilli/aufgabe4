@@ -1,6 +1,7 @@
 package tree.integer;
 
 import tree.IntegerNode;
+import tree.StringNode;
 
 
 public class IntTree extends IntegerTree {
@@ -31,6 +32,13 @@ public class IntTree extends IntegerTree {
 	}
 	
 	private IntegerNode insert(IntegerNode node, int label) {
+		if (node == null)
+			node = new IntegerNode(label);
+		
+		if (node.getLeft() == null)
+			node.setLeft(new IntegerNode(label));
+		else
+			insert((IntegerNode) node.getLeft(), label);
 		
 		return node;
 	}
