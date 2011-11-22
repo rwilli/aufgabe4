@@ -13,26 +13,7 @@ public abstract class Node {
 	// right child
 	private Node right;
 	
-	//predecessor of this node
-	private Node predecessor;
-	
-	/**
-	 * Getter predecessor
-	 * @return predecessor of this Node
-	 * can be null
-	 * 
-	 */
-	public Node getPredecessor() {
-		return this.predecessor;
-	}
 
-	/**
-	 * Setter of predecessor
-	 * @param predecessor
-	 */
-	public void setPredecessor(Node predecessor) {
-		this.predecessor = predecessor;
-	}
 
 	/**
 	 * Getter left child
