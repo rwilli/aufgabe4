@@ -259,17 +259,17 @@ default::Node
     <coordinates>
       <x>594</x>
       <y>168</y>
-      <w>84</w>
-      <h>138</h>
+      <w>96</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>72;126;18;18</additional_attributes>
+    <additional_attributes>84;132;18;18</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>552</x>
-      <y>294</y>
+      <x>564</x>
+      <y>300</y>
       <w>138</w>
       <h>78</h>
     </coordinates>
@@ -284,13 +284,13 @@ tree.integer::IntegerTree
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>630</x>
-      <y>354</y>
-      <w>60</w>
-      <h>72</h>
+      <x>642</x>
+      <y>360</y>
+      <w>48</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>18;18;48;60</additional_attributes>
+    <additional_attributes>18;18;36;54</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
@@ -313,11 +313,11 @@ tree::Tree
     <coordinates>
       <x>510</x>
       <y>252</y>
-      <w>132</w>
-      <h>54</h>
+      <w>144</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>18;18;120;42</additional_attributes>
+    <additional_attributes>18;18;132;48</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>

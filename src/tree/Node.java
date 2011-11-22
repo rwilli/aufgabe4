@@ -13,7 +13,52 @@ public abstract class Node {
 	// right child
 	private Node right;
 	
+	// parent of this node
+	private Node parent;
+	
+	private int depth;
+	
+	
+	public int getDepth() {
+		return depth;
+	}
 
+	public void setDepth(int depth) {
+		this.depth = depth;
+	}
+
+	/*public boolean isBalanced(){
+		
+		if(getLeft() != null && getRight() != null )
+			return true;
+		else
+			return false;
+	}
+	
+	public boolean isLeaf(){
+		
+		if(getLeft() == null && getRight() == null )
+			return true;
+		else 
+			return false;
+	}
+*/
+	/**
+	 * Get Parent of this Node
+	 * @return parent of this Node, can be null
+	 */
+
+	public Node getParent() {
+		return parent;
+	}
+
+	/**
+	 * Set parent of this node, can be null
+	 * @param parent
+	 */
+	public void setParent(Node parent) {
+		this.parent = parent;
+	}
 
 	/**
 	 * Getter left child

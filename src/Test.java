@@ -154,31 +154,31 @@ public class Test {
 		/*
 		 * Testcase IntTree
 		 */
-		t = new IntTree();
-		
-		((IntegerTree) t).add(4);
-		((IntegerTree) t).add(6);
-		((IntegerTree) t).add(8);
-		((IntegerTree) t).add(11);
-		((IntegerTree) t).add(2);
-		((IntegerTree) t).add(3);
-		((IntegerTree) t).add(34);
-		((IntegerTree) t).add(12);
-		
-		// show tree method from abstract class Tree
-		System.out.println(t.toString());
-		
-		// contains method from abstract class StringTree
-		System.out.println(((IntegerTree) t).contains(11));		// should work
-		System.out.println(((IntegerTree) t).contains(99)); 	// should fail
-		
-		// search method from Replaceable class
-		System.out.println(((IntegerTree) t).search(2));		// should work
-		System.out.println(((IntegerTree) t).search(67));		// should fail
+//		t = new IntTree();
+//		
+//		((IntegerTree) t).add(4);
+//		((IntegerTree) t).add(6);
+//		((IntegerTree) t).add(8);
+//		((IntegerTree) t).add(11);
+//		((IntegerTree) t).add(2);
+//		((IntegerTree) t).add(3);
+//		((IntegerTree) t).add(34);
+//		((IntegerTree) t).add(12);
+//		
+//		// show tree method from abstract class Tree
+//		System.out.println(t.toString());
+//		
+//		// contains method from abstract class StringTree
+//		System.out.println(((IntegerTree) t).contains(11));		// should work
+//		System.out.println(((IntegerTree) t).contains(99)); 	// should fail
+//		
+//		// search method from Replaceable class
+//		System.out.println(((IntegerTree) t).search(2));		// should work
+//		System.out.println(((IntegerTree) t).search(67));		// should fail
 		
 		// create temp tree for replace method
 		t1 = new IntTree();
-		
+		System.out.println("IntTree");
 		((IntTree) t1).add(23);
 		((IntTree) t1).add(7);
 		((IntTree) t1).add(14);
@@ -186,7 +186,7 @@ public class Test {
 		((IntTree) t1).add(12);
 		
 		// replace method from Replaceable class
-		((IntTree) t).replace(2, t1.toString());
+	//	((IntTree) t).replace(2, t1.toString());
 		
 		// show tree method from abstract class Tree
 		System.out.println(t.toString());

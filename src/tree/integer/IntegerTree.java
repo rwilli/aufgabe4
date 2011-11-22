@@ -10,6 +10,11 @@ public abstract class IntegerTree extends Tree {
 	
 	public abstract boolean contains(int node);
 	
+	/**
+	 * 
+	 * @param node
+	 * @return Gibt den Pfad zurück, wenn der Knoten gefunden wurde, sonst "Knoten wurde nicht gefunden"
+	 */
 	public abstract String search(int node);
 	
 	public abstract void add(int node);
