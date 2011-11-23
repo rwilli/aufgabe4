@@ -12,6 +12,7 @@ public class Replaceable {
 		
 		
 		Scanner s = new Scanner(position);
+		INode n	= root;
 		
 		while(s.hasNext()){
 			
@@ -19,12 +20,10 @@ public class Replaceable {
 			
 			if(temp == "left"){
 				
-				//links anhängen
+				n = n.getLeftNode();
 				
 			}else{
-				
-				
-				//rechts anhängen
+				n = n.getRightNode();
 				
 			}
 			
