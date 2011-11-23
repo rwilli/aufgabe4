@@ -24,7 +24,7 @@ public class Test {
 		t.add("H");
 		t.add("J");
 		
-		// show tree method from abstract class StringTree
+		// show tree method from abstract class Tree
 		System.out.println(t.toString());
 		
 		// contains method from abstract class SortedTree
@@ -54,7 +54,7 @@ public class Test {
 		t.add("H");
 		t.add("J");
 		
-		// show tree method from abstract class StringTree
+		// show tree method from abstract class Tree
 		System.out.println(t.toString());
 		
 		// contains method from abstract class SortedTree
@@ -84,7 +84,7 @@ public class Test {
 		t.add("H");
 		t.add("J");
 		
-		// show tree method from abstract class StringTree
+		// show tree method from abstract class Tree
 		System.out.println(t.toString());
 		
 		// contains method from abstract class SortedTree
@@ -114,7 +114,7 @@ public class Test {
 		t.add("H");
 		t.add("J");
 		
-		// show tree method from abstract class StringTree
+		// show tree method from abstract class Tree
 		System.out.println(t.toString());
 		
 		// contains method from abstract class SortedTree
@@ -134,13 +134,13 @@ public class Test {
 		t1.add("I");
 		t1.add("K");
 		
-		// show tree method from abstract class StringTree
+		// show tree method from abstract class Tree
 		System.out.println(t1.toString());
 		
 		// replace method from Replaceable class
 		((ReplaceableTree) t).replace("left left left", t1.toString()); // left left left -> node H
 		
-		// show tree method from abstract class StringTree
+		// show tree method from abstract class Tree
 		System.out.println(t.toString());
 		
 		/*
@@ -158,7 +158,7 @@ public class Test {
 		t2.add(3);
 		t2.add(5);
 		
-		// show tree method from abstract class IntegerTree
+		// show tree method from abstract class Tree
 		System.out.println(t2.toString());
 		
 		// contains method from abstract class IntegerTree
@@ -178,13 +178,13 @@ public class Test {
 		t3.add(9);
 		t3.add(12);
 		
-		// show tree method from abstract class IntegerTree
+		// show tree method from abstract class Tree
 		System.out.println(t3.toString());
 		
 		// replace method from Replaceable class
 		((IntTree) t2).replace("right left", t3.toString());	// right left -> 3
 		
-		// show tree method from abstract class StringTree
+		// show tree method from abstract class Tree
 		System.out.println(t2.toString());
 	}
 

@@ -175,7 +175,7 @@ tree.string::SortedTree
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>305</x>
+      <x>255</x>
       <y>5</y>
       <w>100</w>
       <h>80</h>
@@ -198,17 +198,17 @@ tree.string::SortedTree
     <coordinates>
       <x>195</x>
       <y>45</y>
-      <w>119</w>
+      <w>69</w>
       <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>15;15;110;15</additional_attributes>
+    <additional_attributes>15;15;60;15</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>445</x>
-      <y>100</y>
+      <x>465</x>
+      <y>140</y>
       <w>115</w>
       <h>55</h>
     </coordinates>
@@ -224,13 +224,13 @@ tree.integer::IntegerTree
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>510</x>
-      <y>140</y>
-      <w>94</w>
-      <h>74</h>
+      <x>530</x>
+      <y>180</y>
+      <w>74</w>
+      <h>34</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>15;15;85;65</additional_attributes>
+    <additional_attributes>15;15;65;25</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
@@ -258,23 +258,23 @@ node::INode
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>260</x>
-      <y>70</y>
-      <w>84</w>
-      <h>59</h>
+      <y>75</y>
+      <w>194</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>15;50;75;15</additional_attributes>
+    <additional_attributes>15;45;185;15</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>345</x>
-      <y>70</y>
-      <w>159</w>
-      <h>39</h>
+      <x>470</x>
+      <y>75</y>
+      <w>54</w>
+      <h>74</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>150;30;15;15</additional_attributes>
+    <additional_attributes>45;65;15;15</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
@@ -382,5 +382,38 @@ node::INode
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>15;15;30;60</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>430</x>
+      <y>10</y>
+      <w>100</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+default::Tree
+--
+#root: INode
+#searchPath: String
+#order: String
+--
++toString(): String
++Node()
++Node(o: Object)
++Node(o: Object, p: INode)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>340</x>
+      <y>25</y>
+      <w>99</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>15;15;90;15</additional_attributes>
   </element>
 </diagram>
