@@ -1,3 +1,9 @@
+/**
+ * Abstract class Tree.
+ * 
+ * @author Gruppe222
+ *
+ */
 public abstract class Tree {
 	// root node
 	protected INode root;
