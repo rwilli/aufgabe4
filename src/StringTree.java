@@ -10,6 +10,10 @@ public abstract class StringTree {
 	// tree output
 	private String output = "";
 	String turn = "-";
+	
+	private String order = "";
+
+	int count = -1;
 		
 	/**
 	 * Check if tree contains given string.
@@ -40,43 +44,63 @@ public abstract class StringTree {
 	public abstract void add(String node);
 	
 	public String toString() {
-        return "StringTree toString()";
-    }
 
-	private String toStringHelper(INode node) {
-		if (node == null) 
-			return "";
+		String p = traverseForToString();
 		
-		String p = toStringHelper(node.getLeftNode());
-		p += toStringHelper(node.getRightNode());
-		p = p + node.getLabel() + "-";
-		System.out.print(p);
-		System.out.print("\n");
-		
-		return p;
-		//toStringHelper(node.getLeftNode());	// walk trough left sub-tree
-		//toStringHelper(node.getRightNode());	// walk trough right sub-tree
+		// remove dash in front of root
+		if (p.startsWith("-")) {
+			p = p.substring(1, p.length());
+		}
+		return  p;
 	}
-	
-	public String printTriangle (int count) {
-	    if( count <= 0 ) return "";
 
-	    String p = printTriangle(count - 1);
-	    p = p + "*";
-	    System.out.print(p);
-	    System.out.print("\n");
-	    //System.out.print(p);
-
-	    return p;
-	 }
+	private void preorderTraverseForToString(INode node) {
+		if (node == null) {
+			count = 0;
+			return;
+		}
 	
-	public void printTriangle2 (int count) {
-		for (int x = 1; x <= count; x++) { 
-	        System.out.print("*"); 
-	    }
-	    System.out.print("\n");
-	    if (count == 0) return;
-	    printTriangle2(count - 1);
-	 }
+		this.order += node + "\n";
+	
+		preorderTraverseForToString(node.getLeftNode());
+
+		// walk trough left sub-tree
+		preorderTraverseForToString(node.getRightNode()); // walk trough right sub-tree
+	}
+
+	public String traverseForToString() {
+		if (this.root != null)
+			preorderTraverseForToString(this.root);
+
+		return this.order;
+	}
+
+	public void setDepth(INode root) {
+		Stack stack = new Stack();
+
+		root.setDepth(0);
+		stack.push(root);
+
+		while (stack.size() > 0) {
+
+			Node temp = (Node) stack.pop();
+
+			if (temp != null) {
+				if (temp.getLeftNode() != null) {
+					int leftOfTempDepth =  temp.getDepth() + 1;
+					temp.getLeftNode().setDepth(leftOfTempDepth);
+					stack.push(temp.getLeftNode());
+				}
+
+				if (temp.getRightNode() != null) {
+					int rightOfTempDepth = temp.getDepth() + 1;
+					temp.getRightNode().setDepth(rightOfTempDepth);
+					stack.push(temp.getRightNode());
+				}
+			}
+
+		}
+
+	}
 
 }

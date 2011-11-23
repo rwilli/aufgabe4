@@ -137,5 +137,31 @@ public class Node implements INode {
 	public void setDepth(int d) {
 		this.depth = d;	
 	}
+	
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see node.INode#setDepth(int)
+	 */
+	@Override
+	public String toString() {
+		return calculateHardspaces(this.depth) + "-" + this.label;
+	}
+
+	/**
+	 * Calculates the hardspaces to add for the toString method according to the
+	 * depth
+	 * 
+	 * @param depth the depth of a node
+	 * @return
+	 */
+	private String calculateHardspaces(int depth) {
+
+		String hardspaces = "";
+		for (int level = 1; level < depth; level++) {
+			hardspaces += " ";
+		}
+		return hardspaces;
+	}
 
 }

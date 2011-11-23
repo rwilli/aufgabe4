@@ -42,10 +42,13 @@ public abstract class SortedTree extends StringTree {
 
 	@Override
 	public void add(String node) {
-		if (this.root == null && node != null)
+		if (this.root == null && node != null) {
 	        this.root = new Node(node);
-	    else if (node != null)
+	        this.root.setDepth(10);
+	        
+		} else if (node != null)
 	        this.root = insert(this.root, node);
+			setDepth(this.root);
 	}
 
 	private INode insert(INode root, String label) {

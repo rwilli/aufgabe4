@@ -77,4 +77,12 @@ public interface INode {
 	 * @param d depth to set
 	 */
 	public void setDepth(int d);
+	
+	/**
+	 * toString method
+	 * 
+	 * @return the node as String
+	 */
+	public String toString();
+	
 }
