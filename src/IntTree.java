@@ -100,7 +100,14 @@ public class IntTree extends IntegerTree {
 		if (this.root == null) {
 	        this.root = new Node(node);
 	        this.root.setParentNode(null);
-	        this.root.setDepthNode(0);
+	        
+	        // might cause an IllegalValueException.
+	        // depth >= 0
+	        try {
+				this.root.setDepthNode(0);
+			} catch (IllegalValueException e) {
+				e.printStackTrace();
+			}
 	    } else {
 	         
 	    	INode n = findPlace(this.root, 0);
@@ -126,7 +133,12 @@ public class IntTree extends IntegerTree {
 	 */
 	private INode findPlace(INode node, int depth){
 
-		node.setDepthNode(depth);
+		// depth >= 0
+		try {
+			node.setDepthNode(depth);
+		} catch (IllegalValueException e) {
+			e.printStackTrace();
+		}
 		
 		if(node.getLeftNode() ==null || node.getRightNode() == null){
 			return node;

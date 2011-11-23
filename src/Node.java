@@ -134,7 +134,10 @@ public class Node implements INode {
 	 * @see node.INode#setDepthNode(int)
 	 */
 	@Override
-	public void setDepthNode(int d) {
+	public void setDepthNode(int d) throws IllegalValueException {
+		if (d < 0) {
+			throw new IllegalValueException(d);
+		}
 		this.depth = d;	
 	}
 	

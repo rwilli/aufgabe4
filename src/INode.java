@@ -70,12 +70,13 @@ public interface INode {
 	 */
 	public int getDepthNode();
 	
+	
 	/**
-	 * Setter DepthNode
-	 * 
-	 * @param d depth to set
+	 * Setter for node's depth
+	 * @param d
+	 * @throws IllegalValueException if the value is < 0.
 	 */
-	public void setDepthNode(int d);
+	public void setDepthNode(int d) throws IllegalValueException;
 	
 	/**
 	 * toString method

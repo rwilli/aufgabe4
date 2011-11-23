@@ -56,7 +56,12 @@ public abstract class Tree {
 	public void setDepth(INode root) {
 		Stack stack = new Stack();
 
-		root.setDepthNode(0);
+		// depth >= 0.
+		try {
+			root.setDepthNode(0);
+		} catch (IllegalValueException e) {
+			e.printStackTrace();
+		}
 		stack.push(root);
 
 		while (stack.size() > 0) {
@@ -66,13 +71,25 @@ public abstract class Tree {
 			if (temp != null) {
 				if (temp.getLeftNode() != null) {
 					int leftOfTempDepth =  temp.getDepthNode() + 1;
-					temp.getLeftNode().setDepthNode(leftOfTempDepth);
+					
+					// depth >= 0.
+					try {
+						temp.getLeftNode().setDepthNode(leftOfTempDepth);
+					} catch (IllegalValueException e) {
+						e.printStackTrace();
+					}
 					stack.push(temp.getLeftNode());
 				}
 
 				if (temp.getRightNode() != null) {
 					int rightOfTempDepth = temp.getDepthNode() + 1;
-					temp.getRightNode().setDepthNode(rightOfTempDepth);
+					
+					// depth >= 0.
+					try {
+						temp.getRightNode().setDepthNode(rightOfTempDepth);
+					} catch (IllegalValueException e) {
+						e.printStackTrace();
+					}
 					stack.push(temp.getRightNode());
 				}
 			}

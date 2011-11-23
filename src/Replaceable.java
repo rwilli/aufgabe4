@@ -35,7 +35,7 @@ public class Replaceable {
 		
 	}
 	
-	private INode createTree(String subtree){
+	private INode createTree(String subtree) {
 		
 		System.out.println("Subtree in Create:  " + subtree);
 
@@ -50,7 +50,13 @@ public class Replaceable {
 		INode  n = new Node();
 		
 		n.setLabel(s.charAt(s.length()-1));
-		n.setDepthNode(depth);
+		
+		try {
+			n.setDepthNode(depth);
+		} catch(IllegalValueException e) {
+			e.printStackTrace();
+		}
+		
 		
 		if(sc.hasNextLine()){
 			INode nLeft = createTree(sc.nextLine());
