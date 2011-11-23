@@ -26,13 +26,10 @@ public abstract class Tree {
 		// remove dash in front of root
 		if (p.startsWith("-"))
 			p = p.substring(1, p.length());
-<<<<<<< HEAD
 
-		return p;
-=======
 		order = "";
 		return  p;
->>>>>>> commite
+
 	}
 
 	/**
