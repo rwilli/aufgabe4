@@ -44,7 +44,7 @@ public abstract class SortedTree extends StringTree {
 	public void add(String node) {
 		if (this.root == null && node != null) {
 	        this.root = new Node(node);
-	        this.root.setDepth(10);
+	        this.root.setDepthNode(0);
 	        
 		} else if (node != null)
 	        this.root = insert(this.root, node);

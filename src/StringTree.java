@@ -78,7 +78,7 @@ public abstract class StringTree {
 	public void setDepth(INode root) {
 		Stack stack = new Stack();
 
-		root.setDepth(0);
+		root.setDepthNode(0);
 		stack.push(root);
 
 		while (stack.size() > 0) {
@@ -87,14 +87,14 @@ public abstract class StringTree {
 
 			if (temp != null) {
 				if (temp.getLeftNode() != null) {
-					int leftOfTempDepth =  temp.getDepth() + 1;
-					temp.getLeftNode().setDepth(leftOfTempDepth);
+					int leftOfTempDepth =  temp.getDepthNode() + 1;
+					temp.getLeftNode().setDepthNode(leftOfTempDepth);
 					stack.push(temp.getLeftNode());
 				}
 
 				if (temp.getRightNode() != null) {
-					int rightOfTempDepth = temp.getDepth() + 1;
-					temp.getRightNode().setDepth(rightOfTempDepth);
+					int rightOfTempDepth = temp.getDepthNode() + 1;
+					temp.getRightNode().setDepthNode(rightOfTempDepth);
 					stack.push(temp.getRightNode());
 				}
 			}

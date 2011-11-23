@@ -123,18 +123,18 @@ public class Node implements INode {
 	}
 
 	/* (non-Javadoc)
-	 * @see node.INode#getDepth()
+	 * @see node.INode#getDepthNode()
 	 */
 	@Override
-	public int getDepth() {
+	public int getDepthNode() {
 		return this.depth;
 	}
 
 	/* (non-Javadoc)
-	 * @see node.INode#setDepth(int)
+	 * @see node.INode#setDepthNode(int)
 	 */
 	@Override
-	public void setDepth(int d) {
+	public void setDepthNode(int d) {
 		this.depth = d;	
 	}
 	

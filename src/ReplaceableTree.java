@@ -80,7 +80,7 @@ public class ReplaceableTree extends StringTree {
 	
 	private INode findPlace(INode node, int depth){
 
-		node.setDepth(depth);
+		node.setDepthNode(depth);
 		
 		if(node.getLeftNode() ==null || node.getRightNode() == null){
 			return node;
@@ -90,7 +90,7 @@ public class ReplaceableTree extends StringTree {
 			n1 = findPlace(node.getLeftNode(), depth);
 			n2 = findPlace(node.getRightNode(), depth);
 			
-			if(n1.getDepth() > n2.getDepth())
+			if(n1.getDepthNode() > n2.getDepthNode())
 				return n2;
 			else
 				return n1;

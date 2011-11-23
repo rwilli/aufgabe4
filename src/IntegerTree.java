@@ -9,6 +9,8 @@ public abstract class IntegerTree {
 	
 	// tree output
 	private String output = "";
+	private String order = "";
+	int count = -1;
 	
 	/**
 	 * Check if tree contains given string.
@@ -39,7 +41,63 @@ public abstract class IntegerTree {
 	public abstract void add(int node);
 	
 	public String toString() {
-		return "INTEGERTREE toString";
+
+		String p = traverseForToString();
+		
+		// remove dash in front of root
+		if (p.startsWith("-")) {
+			p = p.substring(1, p.length());
+		}
+		return  p;
+	}
+
+	private void preorderTraverseForToString(INode node) {
+		if (node == null) {
+			count = 0;
+			return;
+		}
+	
+		this.order += node + "\n";
+	
+		preorderTraverseForToString(node.getLeftNode());
+
+		// walk trough left sub-tree
+		preorderTraverseForToString(node.getRightNode()); // walk trough right sub-tree
+	}
+
+	public String traverseForToString() {
+		if (this.root != null)
+			preorderTraverseForToString(this.root);
+
+		return this.order;
+	}
+	
+	public void setDepth(INode root) {
+		Stack stack = new Stack();
+
+		root.setDepthNode(0);
+		stack.push(root);
+
+		while (stack.size() > 0) {
+
+			Node temp = (Node) stack.pop();
+
+			if (temp != null) {
+				if (temp.getLeftNode() != null) {
+					int leftOfTempDepth =  temp.getDepthNode() + 1;
+					temp.getLeftNode().setDepthNode(leftOfTempDepth);
+					stack.push(temp.getLeftNode());
+				}
+
+				if (temp.getRightNode() != null) {
+					int rightOfTempDepth = temp.getDepthNode() + 1;
+					temp.getRightNode().setDepthNode(rightOfTempDepth);
+					stack.push(temp.getRightNode());
+				}
+			}
+
+		}
+
 	}
 
 }

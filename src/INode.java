@@ -65,18 +65,18 @@ public interface INode {
 	public void setRightNode(INode n);
 	
 	/**
-	 * Getter Depth
+	 * Getter DepthNode
 	 * 
 	 * @return depth
 	 */
-	public int getDepth();
+	public int getDepthNode();
 	
 	/**
-	 * Setter Depth
+	 * Setter DepthNode
 	 * 
 	 * @param d depth to set
 	 */
-	public void setDepth(int d);
+	public void setDepthNode(int d);
 	
 	/**
 	 * toString method

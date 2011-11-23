@@ -73,12 +73,14 @@ public class IntTree extends IntegerTree {
 		if (this.root == null) {
 	        this.root = new Node(node);
 	        this.root.setParentNode(null);
+	        this.root.setDepthNode(0);
 	    } else {
 	         
 	    	INode n = findPlace(this.root, 0);
 	    	INode child = new Node(node);
 	    	child.setParentNode(n);
-	 
+	    	setDepth(this.root);
+	    	
 	    	if(n.getLeftNode() == null){
 	    		n.setLeftNode(child);
 	    	}else{
@@ -91,7 +93,7 @@ public class IntTree extends IntegerTree {
 
 	private INode findPlace(INode node, int depth){
 
-		node.setDepth(depth);
+		node.setDepthNode(depth);
 		
 		if(node.getLeftNode() ==null || node.getRightNode() == null){
 			return node;
@@ -101,7 +103,7 @@ public class IntTree extends IntegerTree {
 			n1 = findPlace(node.getLeftNode(), depth);
 			n2 = findPlace(node.getRightNode(), depth);
 			
-			if(n1.getDepth() > n2.getDepth())
+			if(n1.getDepthNode() > n2.getDepthNode())
 				return n2;
 			else
 				return n1;
