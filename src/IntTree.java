@@ -11,7 +11,8 @@ public class IntTree extends IntegerTree {
 	// current search path
 	private String currentPath = "";
 
-	// ?????TODO
+	// initialize a Replaceable Object.
+	// this is used for subtree replacements.
 	Replaceable rp = new Replaceable();
 
 	/**
