@@ -13,7 +13,6 @@ public abstract class StringTree {
 	
 	private String order = "";
 
-	int count = -1;
 		
 	/**
 	 * Check if tree contains given string.
@@ -56,7 +55,6 @@ public abstract class StringTree {
 
 	private void preorderTraverseForToString(INode node) {
 		if (node == null) {
-			count = 0;
 			return;
 		}
 	
