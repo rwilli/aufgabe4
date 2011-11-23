@@ -1,4 +1,3 @@
-
 public abstract class Tree {
 	// root node
 	protected INode root;
@@ -11,36 +10,43 @@ public abstract class Tree {
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	public String toString() {
 
 		String p = traverseForToString();
-		
+
 		// remove dash in front of root
 		if (p.startsWith("-"))
 			p = p.substring(1, p.length());
-		
-		return  p;
+
+		return p;
 	}
 
 	/**
+	 * Use preorder traversal for getting an adequate String represanation for
+	 * the tree.
 	 * 
 	 * @param node
+	 *            usually the root of the tree.
 	 */
 	private void preorderTraverseForToString(INode node) {
 		if (node == null)
 			return;
-	
+
 		this.order += node + "\n";
-	
-		preorderTraverseForToString(node.getLeftNode());	// walk trough left sub-tree
-		preorderTraverseForToString(node.getRightNode()); 	// walk trough right sub-tree
+
+		// walk trough left sub-tree
+		preorderTraverseForToString(node.getLeftNode());
+		// walk trough right sub-tree
+		preorderTraverseForToString(node.getRightNode());
 	}
 
 	/**
+	 * Returns the tree as String.
 	 * 
-	 * @return
+	 * @return a string representation of the tree.
 	 */
 	public String traverseForToString() {
 		if (this.root != null)
@@ -50,8 +56,10 @@ public abstract class Tree {
 	}
 
 	/**
+	 * Sets the depth for each node of a tree.
 	 * 
 	 * @param root
+	 *            the root has depth 0.
 	 */
 	public void setDepth(INode root) {
 		Stack stack = new Stack();
@@ -62,16 +70,18 @@ public abstract class Tree {
 		} catch (IllegalValueException e) {
 			e.printStackTrace();
 		}
+		// push root to the stack
 		stack.push(root);
 
+		// walk through every node and set the according depth.
 		while (stack.size() > 0) {
 
 			Node temp = (Node) stack.pop();
 
 			if (temp != null) {
 				if (temp.getLeftNode() != null) {
-					int leftOfTempDepth =  temp.getDepthNode() + 1;
-					
+					int leftOfTempDepth = temp.getDepthNode() + 1;
+
 					// depth >= 0.
 					try {
 						temp.getLeftNode().setDepthNode(leftOfTempDepth);
@@ -83,7 +93,7 @@ public abstract class Tree {
 
 				if (temp.getRightNode() != null) {
 					int rightOfTempDepth = temp.getDepthNode() + 1;
-					
+
 					// depth >= 0.
 					try {
 						temp.getRightNode().setDepthNode(rightOfTempDepth);
