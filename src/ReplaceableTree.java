@@ -64,17 +64,19 @@ public class ReplaceableTree extends StringTree {
 		if (this.root == null) {
 	        this.root = new Node(node);
 	        this.root.setParentNode(null);
+	        this.root.setDepthNode(0);
 	    } else {
 	         
 	    	INode n = findPlace(this.root, 0);
 	    	INode child = new Node(node);
 	    	child.setParentNode(n);
-	 
+	    	setDepth(this.root);
 	    	if(n.getLeftNode() == null){
 	    		n.setLeftNode(child);
 	    	}else{
 	    		n.setRightNode(child);
 	    	}
+	    	setDepth(this.root);
 	    }
 	}
 	

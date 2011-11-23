@@ -153,6 +153,7 @@ public class Test {
 		t2.add(11);
 		t2.add(2);
 		t2.add(3);
+		t2.add(5);
 		
 		// show tree method from abstract class Tree
 		System.out.println(t2.toString());

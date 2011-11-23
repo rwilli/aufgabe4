@@ -86,6 +86,7 @@ public class IntTree extends IntegerTree {
 	    	}else{
 	    		n.setRightNode(child);
 	    	}
+	    	setDepth(this.root);
 	    }
 	
 	}
