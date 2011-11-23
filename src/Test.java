@@ -24,19 +24,19 @@ public class Test {
 		t.add("H");
 		t.add("J");
 		
-		// show tree method from abstract class Tree
+		// show tree method from abstract class StringTree
 		System.out.println(t.toString());
 		
-		// contains method from abstract class StringTree
-		System.out.println(t.contains("I"));		// should work
-		System.out.println(t.contains("X")); 	// should fail
+		// contains method from abstract class SortedTree
+		System.out.println("Contains I: " + t.contains("I"));		// should work
+		System.out.println("Contains X: " + t.contains("X")); 		// should fail
 		
 		// search method from abstract class SortedTree
-		System.out.println(t.search("H"));		// should work
-		System.out.println(t.search("Z"));		// should fail
+		System.out.println("Search for H: " + t.search("H"));		// should work
+		System.out.println("Search for Z: " + t.search("Z"));		// should fail
 		
 		// traverse method from InorderTree class
-		System.out.println(((InorderTree) t).traverse());
+		System.out.println("Traverse: " + ((InorderTree) t).traverse());
 		
 		/*
 		 * Testcase 2 PostorderTree
@@ -54,19 +54,19 @@ public class Test {
 		t.add("H");
 		t.add("J");
 		
-		// show tree method from abstract class Tree
+		// show tree method from abstract class StringTree
 		System.out.println(t.toString());
 		
-		// contains method from abstract class StringTree
-		System.out.println(t.contains("I"));		// should work
-		System.out.println(t.contains("X")); 	// should fail
-		
+		// contains method from abstract class SortedTree
+		System.out.println("Contains G: " + t.contains("G"));		// should work
+		System.out.println("Contains X: " + t.contains("X")); 		// should fail
+
 		// search method from abstract class SortedTree
-		System.out.println(t.search("H"));		// should work
-		System.out.println(t.search("Z"));		// should fail
-		
-		// traverse method from PostorderTree class
-		System.out.println(((PostorderTree) t).traverse());
+		System.out.println("Search for F: " + t.search("F"));		// should work
+		System.out.println("Search for Z: " + t.search("Z"));		// should fail
+
+		// traverse method from InorderTree class
+		System.out.println("Traverse: " + ((PostorderTree) t).traverse());
 		
 		/*
 		 * Testcase 3 PreorderTree
@@ -84,19 +84,19 @@ public class Test {
 		t.add("H");
 		t.add("J");
 		
-		// show tree method from abstract class Tree
+		// show tree method from abstract class StringTree
 		System.out.println(t.toString());
 		
-		// contains method from abstract class StringTree
-		System.out.println(t.contains("I"));		// should work
-		System.out.println(t.contains("X")); 	// should fail
-		
+		// contains method from abstract class SortedTree
+		System.out.println("Contains J: " + t.contains("J"));		// should work
+		System.out.println("Contains X: " + t.contains("X")); 		// should fail
+
 		// search method from abstract class SortedTree
-		System.out.println(t.search("H"));		// should work
-		System.out.println(t.search("Z"));		// should fail
-		
-		// traverse method from PostorderTree class
-		System.out.println(((PreorderTree) t).traverse());
+		System.out.println("Search for C: " + t.search("C"));		// should work
+		System.out.println("Search for Z: " + t.search("Z"));		// should fail
+
+		// traverse method from InorderTree class
+		System.out.println("Traverse: " + ((PreorderTree) t).traverse());
 		
 		/*
 		 * Testcase 4 ReplaceableTree
@@ -114,16 +114,16 @@ public class Test {
 		t.add("H");
 		t.add("J");
 		
-		// show tree method from abstract class Tree
+		// show tree method from abstract class StringTree
 		System.out.println(t.toString());
 		
-		// contains method from abstract class StringTree
-		System.out.println(t.contains("I"));		// should work
-		System.out.println(t.contains("X")); 	// should fail
-		
+		// contains method from abstract class SortedTree
+		System.out.println("Contains I: " + t.contains("I"));		// should work
+		System.out.println("Contains X: " + t.contains("X")); 		// should fail
+
 		// search method from abstract class SortedTree
-		System.out.println(t.search("H"));		// should work
-		System.out.println(t.search("Z"));		// should fail
+		System.out.println("Search for H: " + t.search("H"));		// should work
+		System.out.println("Search for Z: " + t.search("Z"));		// should fail
 		
 		// create temp tree for replace method
 		StringTree t1 = new ReplaceableTree();
@@ -134,10 +134,13 @@ public class Test {
 		t1.add("I");
 		t1.add("K");
 		
-		// replace method from Replaceable class
-		((ReplaceableTree) t).replace("F", t1.toString());
+		// show tree method from abstract class StringTree
+		System.out.println(t1.toString());
 		
-		// show tree method from abstract class Tree
+		// replace method from Replaceable class
+		((ReplaceableTree) t).replace("left left left", t1.toString()); // left left left -> node H
+		
+		// show tree method from abstract class StringTree
 		System.out.println(t.toString());
 		
 		/*
@@ -155,16 +158,16 @@ public class Test {
 		t2.add(3);
 		t2.add(5);
 		
-		// show tree method from abstract class Tree
+		// show tree method from abstract class IntegerTree
 		System.out.println(t2.toString());
 		
-		// contains method from abstract class StringTree
-		System.out.println(t2.contains(11));		// should work
-		System.out.println(t2.contains(99)); 	// should fail
+		// contains method from abstract class IntegerTree
+		System.out.println("Contains 11: " + t2.contains(11));		// should work
+		System.out.println("Contains 99: " + t2.contains(99)); 		// should fail
 		
-		// search method from Replaceable class
-		System.out.println(((IntTree) t2).search(3));		// should work
-		System.out.println(t2.search(67));		// should fail
+		// search method from IntTree class
+		System.out.println("Search for 3: " + ((IntTree) t2).search(3));	// should work
+		System.out.println("Search for 67: " + t2.search(67));				// should fail
 		
 		// create temp tree for replace method
 		IntegerTree t3 = new IntTree();
@@ -175,10 +178,13 @@ public class Test {
 		t3.add(9);
 		t3.add(12);
 		
-		// replace method from Replaceable class
-		((IntTree) t2).replace("8", t3.toString());
+		// show tree method from abstract class IntegerTree
+		System.out.println(t3.toString());
 		
-		// show tree method from abstract class Tree
+		// replace method from Replaceable class
+		((IntTree) t2).replace("right left", t3.toString());	// right left -> 3
+		
+		// show tree method from abstract class StringTree
 		System.out.println(t2.toString());
 	}
 

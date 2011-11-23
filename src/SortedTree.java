@@ -1,6 +1,12 @@
-
-
-
+/**
+ * Abstract class SortedTree extends StringTree and
+ * represents a binary tree. The left nodes are smaller
+ * than the right ones and the right nodes are equal or
+ * taller then the left ones.
+ * 
+ * @author Gruppe222
+ *
+ */
 public abstract class SortedTree extends StringTree {
 	// current node
 	private INode currentNode;
@@ -8,6 +14,7 @@ public abstract class SortedTree extends StringTree {
 	// current search path
 	private String currentPath;
 	
+	// tree order output
 	protected String order = "";
 
 	/**
@@ -17,11 +24,19 @@ public abstract class SortedTree extends StringTree {
 	 */
 	public abstract String traverse();
 
+	/*
+	 * (non-Javadoc)
+	 * @see StringTree#contains(java.lang.String)
+	 */
 	@Override
 	public boolean contains(String node) {
 		return search(node).equals("Knoten wurde nicht gefunden") ? false: true;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see StringTree#search(java.lang.String)
+	 */
 	@Override
 	public String search(String node) {
 		currentNode = this.root;
@@ -40,6 +55,10 @@ public abstract class SortedTree extends StringTree {
 		return currentNode == null ? "Knoten wurde nicht gefunden" : currentPath;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see StringTree#add(java.lang.String)
+	 */
 	@Override
 	public void add(String node) {
 		if (this.root == null && node != null) {
@@ -51,6 +70,13 @@ public abstract class SortedTree extends StringTree {
 			setDepth(this.root);
 	}
 
+	/**
+	 * Insert new node with given label in the tree
+	 * 
+	 * @param root root node of the tree
+	 * @param label to be stored in the node
+	 * @return new root node with child nodes
+	 */
 	private INode insert(INode root, String label) {
 		if (root == null)
 			root = new Node(label);

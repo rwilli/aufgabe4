@@ -1,16 +1,34 @@
-
-
-
+/**
+ * PreorderTree class extends SortedTree and
+ * implements preorder traverse method
+ * 
+ * @author Gruppe222
+ *
+ */
 public class PreorderTree extends SortedTree {
 	
+	/**
+	 * default constructor
+	 */
 	public PreorderTree() {
 		
 	}
 	
+	/**
+	 * constructor with root node
+	 * 
+	 * @param n root node
+	 */
 	public PreorderTree(INode n) {
 		this.root = n;
 	}
 	
+	/**
+	 * constructor with root node and string label
+	 * 
+	 * @param n root node
+	 * @param l string label
+	 */
 	public PreorderTree(INode n, String l) {
 		this.root = n;
 		this.root.setLabel(l);

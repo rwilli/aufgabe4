@@ -1,16 +1,19 @@
-
-
-
+/**
+ * Abstract class IntegerTree represents a
+ * binary tree labeled with int.
+ * 
+ * @author Gruppe222
+ *
+ */
 public abstract class IntegerTree {
+	// root node
 	protected INode root;
 	
 	// tree search path
 	protected String searchPath = "";
 	
-	// tree output
-	private String output = "";
+	// tree order output
 	private String order = "";
-	int count = -1;
 	
 	/**
 	 * Check if tree contains given string.
@@ -40,38 +43,50 @@ public abstract class IntegerTree {
 	 */
 	public abstract void add(int node);
 	
+	/*
+	 * (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	public String toString() {
 
 		String p = traverseForToString();
 		
 		// remove dash in front of root
-		if (p.startsWith("-")) {
+		if (p.startsWith("-"))
 			p = p.substring(1, p.length());
-		}
+		
 		return  p;
 	}
 
+	/**
+	 * 
+	 * @param node
+	 */
 	private void preorderTraverseForToString(INode node) {
-		if (node == null) {
-			count = 0;
+		if (node == null)
 			return;
-		}
 	
 		this.order += node + "\n";
 	
-		preorderTraverseForToString(node.getLeftNode());
-
-		// walk trough left sub-tree
-		preorderTraverseForToString(node.getRightNode()); // walk trough right sub-tree
+		preorderTraverseForToString(node.getLeftNode());	// walk trough left sub-tree
+		preorderTraverseForToString(node.getRightNode()); 	// walk trough right sub-tree
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String traverseForToString() {
 		if (this.root != null)
 			preorderTraverseForToString(this.root);
 
 		return this.order;
 	}
-	
+
+	/**
+	 * 
+	 * @param root
+	 */
 	public void setDepth(INode root) {
 		Stack stack = new Stack();
 

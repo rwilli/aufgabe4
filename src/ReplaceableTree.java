@@ -1,33 +1,73 @@
-
-
-
+/**
+ * PreplaceableTree class extends StringTree and
+ * implements replace method which can be use to
+ * replace one sub-tree by another one.
+ * 
+ * @author Gruppe222
+ *
+ */
 public class ReplaceableTree extends StringTree {
+	// current search path
 	private String currentPath = "";
+	
+	// ?????TODO
 	Replaceable rp = new Replaceable();
 
-
+	/**
+	 * default constructor
+	 */
 	public ReplaceableTree() {
 		
 	}
 	
+	/**
+	 * constructor with root node
+	 * 
+	 * @param n root node
+	 */
 	public ReplaceableTree(INode n) {
 		this.root = n;
 	}
 	
+	/**
+	 * constructor with root node and string label
+	 * 
+	 * @param n root node
+	 * @param l string label
+	 */
 	public ReplaceableTree(INode n, String l) {
 		this.root = n;
 		this.root.setLabel(l);
 	}
 	
+	/**
+	 * Replace one subtree by another one
+	 * 
+	 * @param position to subtree, which will be replaced
+	 * @param subTree to be inserted
+	 */
+	public void replace(String position, String subTree) {
+		
+		rp.replace(this.root, position, subTree);
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see StringTree#contains(java.lang.String)
+	 */
 	@Override
 	public boolean contains(String node) {
 		return search(node).equals("Knoten wurde nicht gefunden") ? false: true;
 
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see StringTree#search(java.lang.String)
+	 */
 	@Override
 	public String search(String node) {
-		this.currentPath = "";
+		this.currentPath = this.searchPath;
 		
 		Stack s = new Stack();
 		
@@ -59,6 +99,10 @@ public class ReplaceableTree extends StringTree {
 		  return "Knoten wurde nicht gefunden";
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see StringTree#add(java.lang.String)
+	 */
 	@Override
 	public void add(String node) {
 		if (this.root == null) {
@@ -80,6 +124,12 @@ public class ReplaceableTree extends StringTree {
 	    }
 	}
 	
+	/**
+	 * 
+	 * @param node
+	 * @param depth
+	 * @return
+	 */
 	private INode findPlace(INode node, int depth){
 
 		node.setDepthNode(depth);
@@ -100,9 +150,5 @@ public class ReplaceableTree extends StringTree {
 		}	
 		
 	}
-
-	public void replace(String position, String subTree) {
-		
-		rp.replace(this.root, position, subTree);
-	}
+	
 }

@@ -1,19 +1,20 @@
-
-
-
+/**
+ * Abstract class StringTree represents a
+ * binary tree labeled with string.
+ * 
+ * @author Gruppe222
+ *
+ */
 public abstract class StringTree {
+	// root node
 	protected INode root;
 	
 	// tree search path
 	protected String searchPath = "";
-		
-	// tree output
-	private String output = "";
-	String turn = "-";
 	
+	// tree order output
 	private String order = "";
-
-		
+	
 	/**
 	 * Check if tree contains given string.
 	 * Returns true if tree contains node
@@ -42,30 +43,39 @@ public abstract class StringTree {
 	 */
 	public abstract void add(String node);
 	
+	/*
+	 * (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	public String toString() {
 
 		String p = traverseForToString();
 		
 		// remove dash in front of root
-		if (p.startsWith("-")) {
+		if (p.startsWith("-"))
 			p = p.substring(1, p.length());
-		}
+		
 		return  p;
 	}
 
+	/**
+	 * 
+	 * @param node
+	 */
 	private void preorderTraverseForToString(INode node) {
-		if (node == null) {
+		if (node == null)
 			return;
-		}
 	
 		this.order += node + "\n";
 	
-		preorderTraverseForToString(node.getLeftNode());
-
-		// walk trough left sub-tree
-		preorderTraverseForToString(node.getRightNode()); // walk trough right sub-tree
+		preorderTraverseForToString(node.getLeftNode());	// walk trough left sub-tree
+		preorderTraverseForToString(node.getRightNode()); 	// walk trough right sub-tree
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String traverseForToString() {
 		if (this.root != null)
 			preorderTraverseForToString(this.root);
@@ -73,6 +83,10 @@ public abstract class StringTree {
 		return this.order;
 	}
 
+	/**
+	 * 
+	 * @param root
+	 */
 	public void setDepth(INode root) {
 		Stack stack = new Stack();
 

@@ -1,6 +1,3 @@
-
-
-
 /**
  * InorderTree class extends SortedTree and
  * implements inorder traverse method
@@ -10,14 +7,28 @@
  */
 public class InorderTree extends SortedTree {
 
+	/**
+	 * default constructor
+	 */
 	public InorderTree() {
 		
 	}
 	
+	/**
+	 * constructor with root node
+	 * 
+	 * @param n root node
+	 */
 	public InorderTree(INode n) {
 		this.root = n;
 	}
 	
+	/**
+	 * constructor with root node and string label
+	 * 
+	 * @param n root node
+	 * @param l string label
+	 */
 	public InorderTree(INode n, String l) {
 		this.root = n;
 		this.root.setLabel(l);

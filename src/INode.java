@@ -1,5 +1,3 @@
-
-
 /**
  * Interface INode implements all necessary
  * node methods for a tree
@@ -8,6 +6,7 @@
  *
  */
 public interface INode {
+	
 	/**
 	 * Getter Label
 	 * 

@@ -1,27 +1,52 @@
-
-
-
+/**
+ * IntTree class extends IntegerTree and
+ * implements replace method which can be use to
+ * replace one sub-tree by another one.
+ * Nodes are labeled with int.
+ * 
+ * @author Gruppe222
+ *
+ */
 public class IntTree extends IntegerTree {
+	// current search path
 	private String currentPath = "";
-	// current node
-		private INode currentNode;
-		Replaceable rp = new Replaceable();
 
+	// ?????TODO
+	Replaceable rp = new Replaceable();
 
+	/**
+	 * default constructor
+	 */
 	public IntTree() {
-
-		
+	
 	}
 	
+	/**
+	 * constructor with root node
+	 * 
+	 * @param n root node
+	 */
 	public IntTree(INode n) {
 		this.root = n;
 	}
 	
+	/**
+	 * constructor with root node and int label
+	 * 
+	 * @param n root node
+	 * @param l int label
+	 */
 	public IntTree(INode n, int l) {
 		this.root = n;
 		this.root.setLabel(l);
 	}
 	
+	/**
+	 * Replace one subtree by another one
+	 * 
+	 * @param position to subtree, which will be replaced
+	 * @param subTree to be inserted
+	 */
 	public void replace(String position, String subTree) {
 		
 		rp.replace(this.root, position, subTree);
@@ -33,7 +58,7 @@ public class IntTree extends IntegerTree {
 	 */
 	@Override
 	public String search(int node) {
-		this.currentPath = "";
+		this.currentPath = this.searchPath;
 		
 		Stack s = new Stack();
 		
@@ -66,8 +91,10 @@ public class IntTree extends IntegerTree {
 
 	}
 	
-	
-
+	/*
+	 * (non-Javadoc)
+	 * @see IntegerTree#add(int)
+	 */
 	@Override
 	public void add(int node) {
 		if (this.root == null) {
@@ -91,7 +118,12 @@ public class IntTree extends IntegerTree {
 	
 	}
 	
-
+	/**
+	 * 
+	 * @param node
+	 * @param depth
+	 * @return
+	 */
 	private INode findPlace(INode node, int depth){
 
 		node.setDepthNode(depth);
@@ -113,6 +145,10 @@ public class IntTree extends IntegerTree {
 		
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see IntegerTree#contains(int)
+	 */
 	@Override
 	public boolean contains(int node) {
 		return search(node).equals("Knoten wurde nicht gefunden") ? false: true;

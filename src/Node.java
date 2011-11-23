@@ -1,7 +1,7 @@
-
-
-
 /**
+ * Node implements INode and
+ * stands for a tree node label
+ * with Object
  * 
  * @author Gruppe222
  *
@@ -153,7 +153,7 @@ public class Node implements INode {
 	 * depth
 	 * 
 	 * @param depth the depth of a node
-	 * @return
+	 * @return amount of hardspaces
 	 */
 	private String calculateHardspaces(int depth) {
 
