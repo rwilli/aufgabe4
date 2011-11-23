@@ -24,21 +24,24 @@ public class Replaceable {
 		}
 		
 		INode parent = n.getParentNode();
-		System.out.println("nLabel  " + n.getLabel());
+		INode newNode = createTree(subtree);
+		newNode.setParentNode(parent);
 		
-		if( n.getParentNode().getLeftNode() == n){
+//		System.out.println("nLabel  " + n.getLabel());
+	//	System.out.println("Parent:"  +n.getParentNode());
+		if( parent.getLeftNode() == n){
 		
-			n.getParentNode().setLeftNode(createTree(subtree));
+			parent.setLeftNode(newNode);
 		}else
-			n.getParentNode().setRightNode(createTree(subtree));
+			parent.setRightNode(newNode);
 
 		
 		
 		
 //		n.setParentNode(parent);
 	//TODO ich kann ja kein neuen REAPLACABLE TREE erstellen hier 
-	//	StringTree t = new ReplaceableTree(n);
-	//	System.out.println("New SubTree:   " + t.toString());
+		StringTree t = new ReplaceableTree(newNode);
+		System.out.println("New SubTree:   " + t.toString());
 		
 	
 		
