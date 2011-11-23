@@ -64,10 +64,12 @@ public abstract class SortedTree extends StringTree {
 		if (this.root == null && node != null) {
 	        this.root = new Node(node);
 	        this.root.setDepthNode(0);
+	        this.root.setParentNode(null);
 	        
-		} else if (node != null)
+		} else if (node != null) {
 	        this.root = insert(this.root, node);
 			setDepth(this.root);
+		}
 	}
 
 	/**
@@ -81,12 +83,14 @@ public abstract class SortedTree extends StringTree {
 		if (root == null)
 			root = new Node(label);
 		// left side
-		else if (label.compareTo((String) root.getLabel()) < 0 )
+		else if (label.compareTo((String) root.getLabel()) < 0 ) {
 			root.setLeftNode(insert(root.getLeftNode(), label));
+			root.getLeftNode().setParentNode(new Node(root.getLabel()));
 		// right side
-	    else if (label.compareTo((String) root.getLabel()) >= 0 )
+		} else if (label.compareTo((String) root.getLabel()) >= 0 ) {
 	    	root.setRightNode(insert(root.getRightNode(), label));
-		
+	    	root.getRightNode().setParentNode(new Node(root.getLabel()));
+		}
 		return root;
 	} 
 
