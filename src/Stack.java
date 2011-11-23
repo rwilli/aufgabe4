@@ -1,7 +1,5 @@
-
-
-
 /**
+ * Stack represents a stack
  * 
  * @author Gruppe222
  *
