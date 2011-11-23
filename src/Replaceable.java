@@ -15,22 +15,26 @@ public class Replaceable {
 		INode n	= root;
 		
 		while(s.hasNext()){
-			
 			String temp = s.next();
-			
 			if(temp == "left"){
-				
 				n = n.getLeftNode();
-				
 			}else{
 				n = n.getRightNode();
 				
 			}
-			
-			
 		}
+		
+		//TODO Subtree an n hängen
 		
 		
 	}
+	
+	private INode createTree(){
+		
+		
+		
+		
+	}
+	
 
 }
