@@ -182,7 +182,7 @@ public class Test {
 		System.out.println(t3.toString());
 		
 		// replace method from Replaceable class
-		((IntTree) t2).replace("right left", t3.toString());	// right left -> 3
+	//	((IntTree) t2).replace("right left", t3.toString());	// right left -> 3
 		
 		// show tree method from abstract class Tree
 		System.out.println(t2.toString());

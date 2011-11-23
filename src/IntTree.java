@@ -110,7 +110,7 @@ public class IntTree extends IntegerTree {
 				e.printStackTrace();
 			}
 	    } else {
-	         
+	         //get a the required free place
 	    	INode n = findPlace(this.root, 0);
 	    	INode child = new Node(node);
 	    	child.setParentNode(n);
@@ -127,7 +127,8 @@ public class IntTree extends IntegerTree {
 	}
 	
 	/**
-	 * 
+	 * Finds a free Palace to add ah new Node,
+	 * it is the shortest and most left new Node from the Root
 	 * @param node
 	 * @param depth
 	 * @return
