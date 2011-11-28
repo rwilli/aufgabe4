@@ -49,6 +49,8 @@ public class ReplaceableTree extends StringTree {
 	public void replace(String position, String subTree) {
 		
 		rp.replace(this.root, position, subTree);
+		this.setDepth(this.root);
+
 	}
 	
 	/*

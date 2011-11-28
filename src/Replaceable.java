@@ -7,10 +7,7 @@ public class Replaceable {
 		
 		if(root == null)
 			return;
-//		System.out.println("Position:  " + position);
-//		System.out.println("Subtree:  " + subtree);
-		
-		
+
 		Scanner s = new Scanner(position);
 		INode n	= root;
 		
@@ -29,16 +26,13 @@ public class Replaceable {
 		
 //		System.out.println("nLabel  " + n.getLabel());
 	//	System.out.println("Parent:"  +n.getParentNode());
-		if( parent.getLeftNode() == n){
+		if( parent.getLeftNode().equals(n)){
 		
 			parent.setLeftNode(newNode);
 		}else
 			parent.setRightNode(newNode);
 
 		
-		
-		
-		n.setParentNode(parent);
 	//TODO ich kann ja kein neuen REAPLACABLE TREE erstellen hier 
 		StringTree t = new ReplaceableTree(newNode);
 		System.out.println("New SubTree:\n" + t.toString());

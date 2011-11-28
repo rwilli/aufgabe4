@@ -106,13 +106,13 @@ public class Test {
 		
 		t.add("D");
 		t.add("G");
-		t.add("B");
-		t.add("A");
-		t.add("C");
-		t.add("F");
-		t.add("I");
-		t.add("H");
-		t.add("J");
+//		t.add("B");
+//		t.add("A");
+//		t.add("C");
+//		t.add("F");
+//		t.add("I");
+//		t.add("H");
+//		t.add("J");
 		
 		// show tree method from abstract class Tree
 		System.out.println(t.toString());
@@ -138,7 +138,7 @@ public class Test {
 		System.out.println(t1.toString());
 		
 		// replace method from Replaceable class
-		((ReplaceableTree) t).replace("left left left", t1.toString()); // left left left -> node H
+		((ReplaceableTree) t).replace("left ", t1.toString()); // left left left -> node H
 		
 		// show tree method from abstract class Tree
 		System.out.println(t.toString());

@@ -51,6 +51,7 @@ public class IntTree extends IntegerTree {
 	public void replace(String position, String subTree) {
 		
 		rp.replace(this.root, position, subTree);
+		this.setDepth(this.root);
 	}
 	
 	/*
