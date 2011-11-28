@@ -128,10 +128,10 @@ public class Test {
 		// create temp tree for replace method
 		StringTree t1 = new ReplaceableTree();
 		
-		t1.add("H");
-		t1.add("F");
-		t1.add("J");
-		t1.add("I");
+		t1.add("T");
+		t1.add("V");
+		t1.add("X");
+		t1.add("Y");
 		t1.add("K");
 		
 		// show tree method from abstract class Tree

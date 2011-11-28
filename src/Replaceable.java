@@ -38,10 +38,10 @@ public class Replaceable {
 		
 		
 		
-//		n.setParentNode(parent);
+		n.setParentNode(parent);
 	//TODO ich kann ja kein neuen REAPLACABLE TREE erstellen hier 
 		StringTree t = new ReplaceableTree(newNode);
-		System.out.println("New SubTree:   " + t.toString());
+		System.out.println("New SubTree:\n" + t.toString());
 		
 	
 		
